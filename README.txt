@@ -7,5 +7,6 @@ tracks player status live during the game.
 
 Information regarding player status and the
 state of the game are deployed to a remote
-database service provided by Heroku.
 
+
+This is a test
