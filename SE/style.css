@@ -1,0 +1,71 @@
+body{
+background-color: rgb(126, 122, 122);
+/* transition: all 0.5s; */
+}
+
+
+.two-col {
+overflow: hidden;/* Makes this div contain its floats */
+margin-top: 35%;
+margin-left: 10%;
+margin-right: 10%;
+border: 2px solid black;
+/* padding: 10px 10px 10px 10px; */
+}
+
+.two-col .col1,
+.two-col .col2 {
+    width: 50%;
+}
+
+.two-col .col1 {
+    float: left;
+    text-align: center;
+    text-emphasis-color: black;
+    background-color: red;
+}
+
+.two-col .col2 {
+    float: right;
+    text-align: center;
+    background-color: green;
+}
+
+.two-col label {
+    display: block;
+}
+
+/* .splash{
+    background-color: #000000;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+  }
+  
+  .splash.display-none{
+    background-color: #000000;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+    opacity: -10;
+    transition: all 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    to{
+      opacity: 1;
+    }
+  }
+  
+  .fade-in{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  } */
