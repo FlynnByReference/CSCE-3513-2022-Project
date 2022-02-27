@@ -1,0 +1,1 @@
+web: gunicorn laser-tag-spring-2022.wsgi
