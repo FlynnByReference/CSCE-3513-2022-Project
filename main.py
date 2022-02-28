@@ -12,6 +12,7 @@ from flask import render_template
 from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
+import webapp2 
 
 app = Flask(__name__)
 mh = connectToHeroku()
@@ -54,5 +55,6 @@ def addPlayerThroughMH():
         #yemh.addPlayer(id, first_name, last_name, codename)
         # playerinfo = {id, first_name, last_name, codename}
         # return jsonify(playerinfo)
-
-
+#class User_update(webapp2.RequestHandler):
+#val_no = self.request.Post['no']
+#val_name = self.request.POST['none']
