@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- <script type="text/javascript">
+  function doThis() {
+    var testvar = new XMLHttpRequest();
+    //testvar.onreadystatechange = myPlayers();
+    testvar.open('POST', '/test', true);
+    testvar.send("first=" + document.getElementById('namef1').value);
+    testvar.send("last=" + document.getElementById('namel1').value);
+    testvar.send("code=" + document.getElementById('namec1').value);
+    console.log("Made it here");
+  }
+</script> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+
+<form name="playerForm">
+<div class="two-col">
+  <div class="col1">
+      <label for="field1">Red Team:</label>
+
+      <label for="redf1"> frist Name:</label>
+      <input id="redf1" namef1="fName1" type="text" value="">
+
+      <label for="redl1"> last Name:</label>
+      <input id="redl1" namel1="lName1" type="text" value="">
+
+      <label for="redc1"> code Name:</label>
+      <input id="redc1" namec1="cName1" type="text" value="">
+
+      <!-- <input id="red2" name="red2" type="text" value="">
+      <input id="red3" name="red3" type="text" value="">
+      <input id="red4" name="red4" type="text" value="">
+      <input id="red5" name="red5" type="text" value=""> -->
+  </div>
+
+  <div class="col2">
+      <label for="field2">Green Team:</label>
+
+      <label for="greenf1"> frist Name:</label>
+      <input id="greenf1" name="fName1" type="text" value="">
+
+      <label for="greenl1"> last Name:</label>
+      <input id="greenl1" name="lName1" type="text" value="">
+
+      <label for="greenc1"> code Name:</label>
+      <input id="greenc1" name="cName1" type="text" value="">
+
+      <!-- <input id="green2" name="green2" type="text" value="">
+      <input id="green3" name="green3" type="text" value="">
+      <input id="green4" name="green4" type="text" value=""> -->
+  </div>
+  <input type="button" value="player" onclick="myPlayers(this.form)"><br>
+  <h4 id='description'></h4>
+</div>
+</form>
+
+
+
+</body>
+<script>
+  function myPlayers(form){
+  var redPlayerID1 = 1;
+  var redPlayerFirstName1 = form.redf1.value;
+  var redPlayerLastName1 = form.redl1.value;
+  var redPlayerCodeName1 = form.redc1.value;
+  // var redPlayer2 = form.red2.value;
+  // var redPlayer3 = form.red3.value;
+  // var redPlayer4 = form.red4.value;
+  // var redPlayer5 = form.red5.value;
+  var greenPlayerID1 = 6;
+  var greenPlayerFirstName1 = form.greenf1.value;
+  var greenPlayerLastName1 = form.greenl1.value;
+  var greenPlayerCodeName1 = form.greenc1.value;
+  var redData = {
+    redplayerID : redPlayerID1,
+    redfirstName: redPlayerFirstName1,
+    redlastName: redPlayerLastName1,
+    redcodeName: redPlayerCodeName1
+  };
+
+
+  var greenData = {
+    playerID : greenPlayerID1,
+    firstName: greenPlayerFirstName1,
+    lastName: greenPlayerLastName1,
+    codeName: greenPlayerCodeName1
+  };
+
+
+  var players = Object.assign({}, redData, greenData);
+
+
+  test = new XMLHttpRequest();
+  test.open('POST', '/submit', true);
+  test.onload = function(){
+      var dataSend = JSON.parse(this.responseText);
+  };
+  //JSON.stringify(players);
+  console.log(players);
+  sendData = JSON.stringify(players);
+  test.send(sendData);
+
+}
+</script>
+</html>
