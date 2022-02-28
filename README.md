@@ -11,9 +11,36 @@
 1. Rodrigo Mouron
 1. Stephanie Stock
 
-# To run the project, run the following commands:
+# To run the project (Mac), run the following commands:
 ```python
-$env:Flask_APP="main.py"
-Flask run
+$ export FLASK_APP=main
+$ flask run
+  * Runs on http://127.0.0.1:5000/
+ 
 ```
+
+# To run the project (Windows), run the following commands:
+```python
+> set FLASK_APP=main
+> flask run
+  * Runs on http://127.0.0.1:5000/
+ 
+```
+
+# To install Flask (Terminal commands)
+```python
+pip3 install Flask
+
+```
+
+# Sprint 2 Notes:
+1. Git repositories created
+1. Splash Screen created
+1. Player entry screen created
+1. Database linked to Application
+1. 2 Player addition to database through App
+1. Trello tasks assigned
+1. Individual github commits
+
+# Kill Command
 (CTRL+C to kill)

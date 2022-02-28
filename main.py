@@ -70,6 +70,7 @@ from flask import render_template
 from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
+import webapp2 
 
 app = Flask(__name__)
 mh = connectToHeroku()
@@ -104,7 +105,3 @@ def addPlayerThroughMH():
         last_name = playerData["lastName"]
         codename = playerData["codeName"]
         mh.addPlayer(playerID, first_name, last_name, codename)
-    
-    return jsonify(playerInfo)       
-                
-    
