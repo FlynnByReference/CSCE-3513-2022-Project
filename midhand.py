@@ -5,6 +5,7 @@ class connectToHeroku():
     def __init__(self): 
         pass
         
+    ##Method for adding player info to 
     def addPlayer(self, id, first_name, last_name, codename):
         ##Define variables for database
         self.id = id
@@ -33,5 +34,3 @@ class connectToHeroku():
 
         ##Disconenct from database
         conn.close()
-
-
