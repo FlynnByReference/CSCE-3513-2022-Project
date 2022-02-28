@@ -10,15 +10,49 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import jsonify
+from flask import json
 from midhand import connectToHeroku 
 
 app = Flask(__name__)
-mh = connectToHeroku(11, "David", "Hammons", "Davy Gravy")
-mh.addPlayer()
+mh = connectToHeroku()
+playerID = 0
+#mh.addPlayer(11, "Jase", "Cornett", "Jazer")
+
+# @app.route("/")
+# def home():
+#     return render_template('splitPlayers.html')
+
+# @app.route('/test', methods = ['GET', 'POST'])
+# def addPlayerThroughMH():
+#     if(request.method == 'POST'):
+#         id = 1
+#         first_name = request.form.get('first')
+#         last_name = request.form.get('last')
+#         codename = request.form.get('code')
+#         mh.addPlayer(id, first_name, last_name, codename)
+#         # playerinfo = {id, first_name, last_name, codename}
+#         # return jsonify(playerinfo)
 
 @app.route("/")
 def home():
-    return render_template('PlayerScreen.html')
+    return render_template('splitPlayers.html')
 
+@app.route('/', methods = ['POST'])
 def addPlayerThroughMH():
-    pass
+    if request.method == "POST":
+        playerID = 1
+        first_name = request.form["first"]
+        last_name = request.form["last"]
+        codename = request.form["code"]
+        mh.addPlayer(playerID, first_name, last_name, codename)
+    
+    # jsdata = request.form['javaScriptData']
+    # return json.loads(jsdata)[0]
+    
+    
+    
+        #yemh.addPlayer(id, first_name, last_name, codename)
+        # playerinfo = {id, first_name, last_name, codename}
+        # return jsonify(playerinfo)
+
+

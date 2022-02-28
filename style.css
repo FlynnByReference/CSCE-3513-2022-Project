@@ -1,79 +1,71 @@
-body {
-  margin: 0;
-  padding: 0;
-  width:100vw;
-  height: 100vh;
-  background-color: #eee;
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-}
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #242f3f;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  animation: loader 2s infinite ease;
-}
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
-}
-@keyframes loader {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(180deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(360deg);}
-  100% { transform: rotate(360deg);}
-}
-@keyframes loader-inner {
-  0% { height: 0%;}
-  25% { height: 0%;}
-  50% { height: 100%;}
-  75% { height: 100%;}
-  100% { height: 0%;}
-}
-
-.split {
-
-  width: 50%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+body{
+background-color: rgb(126, 122, 122);
+/* transition: all 0.5s; */
 }
 
 
-
-.left {
-  left: 0;
-  background-color: rgb(236, 3, 3);
-
-
+.two-col {
+overflow: hidden;/* Makes this div contain its floats */
+margin-top: 35%;
+margin-left: 10%;
+margin-right: 10%;
+border: 2px solid black;
+/* padding: 10px 10px 10px 10px; */
 }
 
-
-.right {
-  right: 0;
-  background-color: rgb(19, 204, 50);
+.two-col .col1,
+.two-col .col2 {
+    width: 50%;
 }
+
+.two-col .col1 {
+    float: left;
+    text-align: center;
+    text-emphasis-color: black;
+    background-color: red;
+}
+
+.two-col .col2 {
+    float: right;
+    text-align: center;
+    background-color: green;
+}
+
+.two-col label {
+    display: block;
+}
+
+/* .splash{
+    background-color: #000000;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+  }
+  
+  .splash.display-none{
+    background-color: #000000;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20000;
+    opacity: -10;
+    transition: all 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    to{
+      opacity: 1;
+    }
+  }
+  
+  .fade-in{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  } */
