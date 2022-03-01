@@ -1,3 +1,10 @@
+#  CSCE 3513 Back End Code
+#
+#  To-Do
+#  
+#  
+#
+# Start of Code
 
 from flask import Flask
 from flask import request
@@ -5,7 +12,6 @@ from flask import render_template
 from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
-#import webapp2 
 
 ##Variable for chosing front end path
 app = Flask(__name__)
