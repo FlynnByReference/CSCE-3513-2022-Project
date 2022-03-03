@@ -1,0 +1,104 @@
+body{
+ background-color: rgb(8, 8, 8); 
+/* transition: all 0.5s; */
+}
+
+
+.two-col {
+overflow: hidden;/* Makes this div contain its floats */
+margin-top: 35%;
+margin-left: 10%;
+margin-right: 10%;
+border: 2px solid black;
+/* padding: 10px 10px 10px 10px; */
+}
+
+.two-col .col1,
+.two-col .col2 {
+    width: 50%;
+}
+
+.two-col .col1 {
+    float: left;
+    text-align: left;
+    text-emphasis-color: black;
+    background-color: red;
+}
+
+.two-col .col2 {
+    float: right;
+    text-align: left;
+    background-color: green;
+}
+
+.two-col label {
+    display: block;
+}
+
+/*For player action screen */
+
+.col-action {
+  overflow: hidden;/* Makes this div contain its floats */
+  margin-top: 60;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px solid black;
+  /* padding: 10px 10px 10px 10px; */
+  }
+  
+  .col-action .coll1,
+  .col-action .coll2 {
+      width: 50%;
+  }
+  
+  .col-action .coll1 {
+      float: left;
+      text-align: center;
+      text-emphasis-color: black;
+      background-color: red;
+  }
+  
+  .col-action .coll2 {
+      float: right;
+      text-align: center;
+      background-color: green;
+  }
+  
+  .col-action label {
+      display: block;
+  }
+
+  .box{
+    overflow: hidden;/* Makes this div contain its floats */
+    margin-top: 50;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid black;
+  }
+
+.box .boxRed,
+.box .boxGreen{
+  width: 50%;
+}
+
+  .box .boxRed{
+    float: left;
+    text-align: left;
+    text-emphasis: black;
+    background-color: red;
+  }
+
+  .box .boxGreen{
+    float: right;
+    text-align: left;
+    text-emphasis: black;
+    background-color: green;
+  }
+  .bigBox{
+    height: 400px;
+    margin-left: 10%;
+    margin-right: 10%;
+    float: center;
+    background-color:rgb(231, 231, 231);
+    border: 2px solid rgb(2, 2, 2);
+  }
