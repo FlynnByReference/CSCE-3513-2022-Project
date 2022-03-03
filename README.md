@@ -16,6 +16,8 @@
 $ export FLASK_APP=main
 $ flask run
   * Runs on http://127.0.0.1:5000/
+Follow the link (click + cmd)
+When splash screen loads click on screen to go to player entry screen
  
 ```
 
