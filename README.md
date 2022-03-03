@@ -13,10 +13,11 @@
 
 # To run the project (Mac), run the following commands:
 ```python
+(While in project folder, when you put ls, you see "main.py")
 $ export FLASK_APP=main
 $ flask run
   * Runs on http://127.0.0.1:5000/
-Follow the link (click + cmd)
+Follow the link (cmd + click)
 When splash screen loads click on screen to go to player entry screen
 Enter players information
 Click "Enter" to send players to database
@@ -25,9 +26,14 @@ Click "Enter" to send players to database
 
 # To run the project (Windows), run the following commands:
 ```python
+(While in project folder, when you put ls, you see "main.py")
 > set FLASK_APP=main
-> flask run
+> python3 -m flask run
   * Runs on http://127.0.0.1:5000/
+Follow the link (ctrl + click)
+When splash screen loads click on screen to go to player entry screen
+Enter players information
+Click "Enter" to send players to database
  
 ```
 

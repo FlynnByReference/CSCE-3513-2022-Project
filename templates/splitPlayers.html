@@ -91,13 +91,13 @@
   //Puts green and red players into together
   var players = Object.assign({}, redData, greenData);
 
-  //
+  //Creates for talking between .py
   test = new XMLHttpRequest();
 
   //Opens path to add player info to database
   test.open('POST', '/submit', true);
 
-  //
+  //Sets value for onload
   test.onload = function(){
       var dataSend = JSON.parse(this.responseText);
   };
