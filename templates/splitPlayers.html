@@ -45,7 +45,7 @@
       <input id="green3" name="green3" type="text" value="">
       <input id="green4" name="green4" type="text" value=""> -->
   </div>
-  <input type="button" value="player" onclick="myPlayers(this.form)"><br>
+  <input type="button" value="Enter" onclick="myPlayers(this.form)"><br>
   <h4 id='description'></h4>
   <!-- <button type="button" onclick="window.location.href='/'">Next Page!</button> -->
 </div>
@@ -92,13 +92,13 @@
   //Puts green and red players into together
   var players = Object.assign({}, redData, greenData);
 
-  //
+  //Creates for talking between .py
   test = new XMLHttpRequest();
 
   //Opens path to add player info to database
   test.open('POST', '/submit', true);
 
-  //
+  //Sets value for onload
   test.onload = function(){
       var dataSend = JSON.parse(this.responseText);
   };
