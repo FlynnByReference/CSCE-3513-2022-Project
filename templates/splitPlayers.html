@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en", onkeydown="nextPage();">
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -47,6 +47,7 @@
   </div>
   <input type="button" value="player" onclick="myPlayers(this.form)"><br>
   <h4 id='description'></h4>
+  <!-- <button type="button" onclick="window.location.href='/'">Next Page!</button> -->
 </div>
 </form>
 
@@ -107,6 +108,17 @@
   //Creates and passes variable to pass through to main.py
   sendData = JSON.stringify(players);
   test.send(sendData);
+}
+
+
+//function for event listener
+function nextPage(){
+  if(nextPage() == 'n')
+  window.location.replace('http://127.0.0.1:5000/action')
+
+  if(nextPage == 'b')
+  window.location.replace('http://127.0.0.1:5000/game')
+// window.location.replace('http://127.0.0.1:5000/game/action')
 }
 </script>
 </html>

@@ -13,6 +13,7 @@ from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
 
+
 ##Variable for chosing front end path
 app = Flask(__name__)
 
@@ -64,3 +65,5 @@ def addPlayerThroughMH():
         mh.addPlayer(playerID, first_name, last_name, codename)
         
     return jsonify(playerData)
+
+
