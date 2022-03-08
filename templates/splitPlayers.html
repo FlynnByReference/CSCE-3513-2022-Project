@@ -110,13 +110,9 @@
   test.send(sendData);
 }
 
-// b gets you to the action page
-// n brings you to the splash page
+//enter to get to next page
 $(window).on('keypress',function(e){
   console.log(e.keyCode)
-//  if(e.keyCode == 110){
-//   window.location.replace('http://127.0.0.1:5000/')
-//  }
  if(e.keyCode == 13)
  window.location.replace('http://127.0.0.1:5000/action')
 });
