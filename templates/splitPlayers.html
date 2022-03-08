@@ -110,15 +110,15 @@
   test.send(sendData);
 }
 
-// n gets you to the action page
-// b brings you to the splash page
+// b gets you to the action page
+// n brings you to the splash page
 $(window).on('keypress',function(e){
   console.log(e.keyCode)
  if(e.keyCode == 110){
   window.location.replace('http://127.0.0.1:5000/')
  }
- if(e.keyCode == 109)
- window.location.replace('http://127.0.0.1:5000/game/action')
+ if(e.keyCode == 98)
+ window.location.replace('http://127.0.0.1:5000/game/playerAction')
  
 });
 
