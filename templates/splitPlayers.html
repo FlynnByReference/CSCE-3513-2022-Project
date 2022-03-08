@@ -5,7 +5,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 
 <body>
@@ -114,11 +114,11 @@
 // n brings you to the splash page
 $(window).on('keypress',function(e){
   console.log(e.keyCode)
- if(e.keyCode == 110){
-  window.location.replace('http://127.0.0.1:5000/')
- }
- if(e.keyCode == 98)
- window.location.replace('http://127.0.0.1:5000/game/playerAction')
+//  if(e.keyCode == 110){
+//   window.location.replace('http://127.0.0.1:5000/')
+//  }
+ if(e.keyCode == 13)
+ window.location.replace('http://127.0.0.1:5000/action')
  
 });
 

@@ -71,3 +71,11 @@ def addPlayerThroughMH():
 @app.route('/action')
 def action():
     return render_template('playerAction.html')
+
+
+
+
+
+
+
+##Get info from database to Action screen
