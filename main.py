@@ -68,6 +68,6 @@ def addPlayerThroughMH():
 
 
 ##When path is /action change to the game screen
-@app.route('/action')
+@app.route("/action")
 def action():
     return render_template('playerAction.html')
