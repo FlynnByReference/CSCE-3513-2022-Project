@@ -47,10 +47,10 @@ def addPlayerThroughMH():
                 playerInfo.append(j)
                 
         ##Variables to pass into database for red player 1
-        playerID = playerData["redplayerID"]
-        first_name = playerData["redfirstName"]
-        last_name = playerData["redlastName"]
-        codename = playerData["redcodeName"]
+        playerID = playerData["redplayerID1"]
+        first_name = playerData["redfirstName1"]
+        last_name = playerData["redlastName1"]
+        codename = playerData["redcodeName1"]
         
         ##Call addPlayer method from midhand.py for green player 1
         mh.addPlayer(playerID, first_name, last_name, codename)

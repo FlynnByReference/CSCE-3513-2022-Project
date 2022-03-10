@@ -14,14 +14,23 @@
   <div class="col1">
       <label for="field1">Red Team:</label>
 
-      <label for="redf1"> frist Name:</label>
+      <label for="redf1"> First Name:</label>
       <input id="redf1" namef1="fName1" type="text" value="">
 
-      <label for="redl1"> last Name:</label>
+      <label for="redl1"> Last Name:</label>
       <input id="redl1" namel1="lName1" type="text" value="">
 
-      <label for="redc1"> code Name:</label>
+      <label for="redc1"> Code Name:</label>
       <input id="redc1" namec1="cName1" type="text" value="">
+
+      <!-- <label for="redf2"> First Name:</label>
+      <input id="redf2" namef1="fName2" type="text" value="">
+
+      <label for="redl2"> Last Name:</label>
+      <input id="redl2" namel1="lName2" type="text" value="">
+
+      <label for="redc1"> Code Name:</label>
+      <input id="redc2" namec1="cName2" type="text" value=""> -->
 
       <!-- <input id="red2" name="red2" type="text" value="">
       <input id="red3" name="red3" type="text" value="">
@@ -32,13 +41,13 @@
   <div class="col2">
       <label for="field2">Green Team:</label>
 
-      <label for="greenf1"> frist Name:</label>
+      <label for="greenf1"> First Name:</label>
       <input id="greenf1" name="fName1" type="text" value="">
 
-      <label for="greenl1"> last Name:</label>
+      <label for="greenl1"> Last Name:</label>
       <input id="greenl1" name="lName1" type="text" value="">
 
-      <label for="greenc1"> code Name:</label>
+      <label for="greenc1"> Code Name:</label>
       <input id="greenc1" name="cName1" type="text" value="">
 
       <!-- <input id="green2" name="green2" type="text" value="">
@@ -75,10 +84,10 @@
   
   //Creates array for first red player
   var redData = {
-    redplayerID : redPlayerID1,
-    redfirstName: redPlayerFirstName1,
-    redlastName: redPlayerLastName1,
-    redcodeName: redPlayerCodeName1
+    redplayerID1 : redPlayerID1,
+    redfirstName1: redPlayerFirstName1,
+    redlastName1: redPlayerLastName1,
+    redcodeName1: redPlayerCodeName1
   };
 
   //Creates array for first green player
@@ -112,7 +121,7 @@
 
 //enter to get to next page
 $(window).on('keypress',function(e){
-  console.log(e.keyCode)
+  //console.log(e.keyCode)
  if(e.keyCode == 13)
  window.location.replace('http://127.0.0.1:5000/action')
 });
