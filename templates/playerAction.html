@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" /></head>
+
+
+<body>
+  <div class="col-action">
+    <div class="coll1">
+      <h1>Red Team</h1>
+      
+
+      
+      <!-- red players go here -->
+    </div>
+    <div class="coll2">
+      <h1>Green Team</h1>
+      <!-- green players go here -->
+    </div>
+  </div>
+
+  <!-- Second box -->
+  <!-- Box for red players -->
+  <div class="box">
+  <div class="boxRed"><h3>
+    Rodrigo Mouron<br>
+    pedro<br>
+    logan
+    david</h3>
+    </div>
+
+    <!-- Box for green players -->
+    <div class="boxGreen"><h3>
+      Rodrigo Mouron<br>
+      pedro<br>
+      logan
+      david</h3>
+      </div>
+      </div>
+
+      <!-- Third Box -->
+      <div class="bigBox">
+      </div>
+<form name="playerForm">
+
+</form>
+
+
+</body>
+<script>
+   
+    var bring = new XMLHttpRequest();
+  
+    //Opens path to GET player info to database
+    bring.open('GET', '/action', true);
+    bring.onload = function() {
+      console.log(redData[0])
+      getData = JSON.stringify(players);
+      consol.log(test.get(getData));
+    }
+  
