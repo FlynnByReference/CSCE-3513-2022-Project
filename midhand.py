@@ -1,11 +1,13 @@
 import psycopg2
 
+
+
 ##Class to connect
 class connectToHeroku():
     def __init__(self): 
         pass
         
-    ##Method for adding player info to 
+    ##Method for adding player info to database
     def addPlayer(self, id, first_name, last_name, codename):
         ##Define variables for database
         self.id = id
@@ -33,15 +35,12 @@ class connectToHeroku():
             print("Unable to add player")
 
         ##Disconenct from database
-<<<<<<< Updated upstream
-        conn.close()
-=======
         conn.close()
         
         return 1
         
     ##Method for grabbing players info from database
-    def getPlayer(self):
+    def getPlayer(self, x):
         
         ##Try for attempting to connect to database
         try:
@@ -51,19 +50,21 @@ class connectToHeroku():
             print("Wasn't able to connect")
             
         ##Grab player from db
-        x = 24
         try:
+            ##Select this exact one from this x
             cur2.execute("SELECT * FROM player WHERE Id = %s", (x,))
             record = cur2.fetchone()
-            print(record)
+            #print(record)
         except:
             print("Unable to grab player")
+            
+        ##Close connection 2
+        conn2.close()
         
-        return 1
+        return record
     
     
     
-test = connectToHeroku()
-##test.addPlayer(24, "Nick", "BROWN", "NFB")
-test.getPlayer()
->>>>>>> Stashed changes
+# test = connectToHeroku()
+# ##test.addPlayer(24, "Nick", "BROWN", "NFB")
+# test.getPlayer()

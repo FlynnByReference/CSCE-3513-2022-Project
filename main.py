@@ -56,10 +56,10 @@ def addPlayerThroughMH():
         mh.addPlayer(playerID, first_name, last_name, codename)
         
         ##Variables to pass into database for green player 1        
-        playerID = playerData["playerID"]
-        first_name = playerData["firstName"]
-        last_name = playerData["lastName"]
-        codename = playerData["codeName"]
+        playerID = playerData["greenplayerID1"]
+        first_name = playerData["greenplayerfirstname1"]
+        last_name = playerData["greenplayerlastname1"]
+        codename = playerData["greenplayercodename1"]
         
         ##Call addPlayer method from midhand.py for green player 1
         mh.addPlayer(playerID, first_name, last_name, codename)
@@ -72,10 +72,16 @@ def addPlayerThroughMH():
 def action():
     return render_template('playerAction.html')
 
+    ##Probably need this later
+    #in html
+    #{id}
+    #return render_template('playerAction.html',id = test[0],fname = test[1],lname = test[2],cname = test[3])
 
 
-
-
-
-
-##Get info from database to Action screen
+##Get info from database to Action screen this should probably go in the action about ^^
+def retrievePlayer():
+    test = mh.getPlayer(24)
+    print('Player ID: ' + str(test[0]))
+    print("Player First Name: " + test[1])
+    print("Player Last Name: " + test[2])
+    print("Player Code Name: " + test[3])
