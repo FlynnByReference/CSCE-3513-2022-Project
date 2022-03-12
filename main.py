@@ -21,6 +21,8 @@ app = Flask(__name__)
 mh = connectToHeroku()
 playerID = 0
 
+# mh.addPlayer(4, 'Testing', 'Main.py', 'test')
+
 ##Sets first path to splash screen
 @app.route("/")
 def home():
@@ -52,8 +54,17 @@ def addPlayerThroughMH():
         last_name = playerData["redlastName1"]
         codename = playerData["redcodeName1"]
         
-        ##Call addPlayer method from midhand.py for green player 1
+        ##Call addPlayer method from midhand.py for red player 1
         mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        # ##Variables to pass into database for red player 2
+        # playerID = playerData["redplayerID2"]
+        # first_name = playerData["redfirstName2"]
+        # last_name = playerData["redlastName2"]
+        # codename = playerData["redcodeName2"]
+        
+        # ##Call addPlayer method from midhand.py for red player 2
+        # mh.addPlayer(playerID, first_name, last_name, codename)
         
         ##Variables to pass into database for green player 1        
         playerID = playerData["greenplayerID1"]
