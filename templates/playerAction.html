@@ -12,7 +12,7 @@
   <div class="col-action">
     <div class="coll1">
       <h1>Red Team</h1>
-      <p id="test" ></p>
+      <p id="cdt" ></p>
       
       <!-- red players go here -->
     </div>
@@ -58,7 +58,7 @@
   var countDownTime = 30;
 
   //Find where the countdown is supposed to be
-  var count = document.getElementById('test')
+  var count = document.getElementById('cdt')
 
   //Function for every 1 second to print the count
   var time = setInterval(function() {
@@ -68,7 +68,7 @@
     }
     //Display time and subtract 1
     else{
-      count.innerHTML = countDownTime + ' seconds remaining untill game starts';
+      count.innerHTML = countDownTime + ' seconds remaining until game starts';
       countDownTime = countDownTime - 1;
     }
   }, 1000);

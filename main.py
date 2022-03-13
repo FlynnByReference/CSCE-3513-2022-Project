@@ -19,7 +19,6 @@ app = Flask(__name__)
 
 ##Declares  class from midhand.py
 mh = connectToHeroku()
-playerID = 0
 
 # mh.addPlayer(4, 'Testing', 'Main.py', 'test')
 

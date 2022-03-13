@@ -1,7 +1,5 @@
 import psycopg2
 
-
-
 ##Class to connect
 class connectToHeroku():
     def __init__(self): 
