@@ -8,21 +8,21 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" /></head>
 
 
-<body>
+<body onload="testFunction()">
   <div class="col-action">
     <div class="coll1">
       <h1>Red Team</h1>
-      
-
+      <p id="test" ></p>
       
       <!-- red players go here -->
     </div>
+
     <div class="coll2">
       <h1>Green Team</h1>
       <!-- green players go here -->
     </div>
   </div>
-
+  
   <!-- Second box -->
   <!-- Box for red players -->
   <div class="box">
@@ -54,26 +54,55 @@
 </body>
 
 <script>
+  //Set countdown to 30 seconds
+  var countDownTime = 30;
 
+  //Find where the countdown is supposed to be
+  var count = document.getElementById('test');
+
+  //Function for every 1 second to print the count
+  var time = setInterval(function() {
+    //If time is less then 0 keep at 0
+    if(countDownTime < 0){
+      clearTimeout(time);
+    }
+    //Display time and subtract 1
+    else{
+      count.innerHTML = countDownTime + ' seconds remaining until game starts';
+      countDownTime = countDownTime - 1;
+    }
+  }, 1000);
+  
+
+function testFunction(){
   // Get red team players
-  var request = new XMLHttpRequest();
-          request.open('GET','redData', true);
-          request.onload = function() {
-              var response = request.response;
-              const redData = response.split(",");
-              var redName1 = redData;
-              document.getElementById("redName1").innerHTML = redData;
-          }
+  request = new XMLHttpRequest();
+  request.open('GET', '/getplayer', true);
+  console.log("Here");
+  request.send();
+}
+  
 
-  // Get green team players
-  var request = new XMLHttpRequest();
-          request.open('GET','greenData', true);
-          request.onload = function() {
-              var response = request.response;
-              const greenData = response.split(",");
-              var greenName1 = greenData;
-              document.getElementById("greenName1").innerHTML = greenData;
-          }
+
+
+
+  //         request.open('GET','redData', true);
+  //         request.onload = function() {
+  //             var response = request.response;
+  //             const redData = response.split(",");
+  //             var redName1 = redData;
+  //             document.getElementById("redName1").innerHTML = redData;
+  //         }
+
+  // // Get green team players
+  // var request = new XMLHttpRequest();
+  //         request.open('GET','greenData', true);
+  //         request.onload = function() {
+  //             var response = request.response;
+  //             const greenData = response.split(",");
+  //             var greenName1 = greenData;
+  //             document.getElementById("greenName1").innerHTML = greenData;
+  //        }
   </script>
 
   </html>

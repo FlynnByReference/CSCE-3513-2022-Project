@@ -276,7 +276,7 @@
       var dataSend = JSON.parse(this.responseText);
   };
   //Testing that players are pased through
-  console.log(players);
+  // console.log(players);
 
   //Creates and passes variable to pass through to main.py
   sendData = JSON.stringify(players);
@@ -285,15 +285,5 @@
   //Change html link for action screen
   window.location.replace('http://127.0.0.1:5000/action');
 }
-
-
-//Was able to put it in the enter button function
-//enter to get to next page
-// $(window).on('keypress',function(e){
-//   //console.log(e.keyCode)
-//  if(e.keyCode == 13)
-//  window.location.replace('http://127.0.0.1:5000/action')
-// });
-
 </script>
 </html>
