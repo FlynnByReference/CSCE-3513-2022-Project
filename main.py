@@ -148,16 +148,10 @@ def addPlayerThroughMH():
 def action():
     return render_template('playerAction.html')
 
-    ##Probably need this later
-    #in html
-    #{id}
-    #return render_template('playerAction.html',id = test[0],fname = test[1],lname = test[2],cname = test[3])
-
-
 ##Get info from database to Action screen this should probably go in the action about ^^
 @app.route('/getplayer', methods = ['GET'])
 def retrievePlayer():
-    
+    ##Detect 'GET' method
     if request.method == 'GET':
         ##All players from database
         test = mh.getPlayer()
@@ -168,24 +162,102 @@ def retrievePlayer():
         lastrl1 = test[0][2]
         codeNamerc1 = test[0][3]
         
+        ##Red player 2 info
+        IDri2 = test[2][0]
+        firstrf2 = test[2][1]
+        lastrl2 = test[2][2]
+        codeNamerc2 = test[2][3]
+        
+        ##Red player 3 info
+        IDri3 = test[4][0]
+        firstrf3 = test[4][1]
+        lastrl3 = test[4][2]
+        codeNamerc3 = test[4][3]
+        
+        ##Red player 4 info
+        IDri4 = test[6][0]
+        firstrf4 = test[6][1]
+        lastrl4 = test[6][2]
+        codeNamerc4 = test[6][3]
+        
+        ##Red player 5 info
+        IDri5 = test[8][0]
+        firstrf5 = test[8][1]
+        lastrl5 = test[8][2]
+        codeNamerc5 = test[8][3]
+        
         ##Green player 1 info
         IDgi1 = test[1][0]
         firstgf1 = test[1][1]
         lastgl1 = test[1][2]
         codeNamegc1 = test[1][3]
-        testdict = {
-            "redplayer1ID" : IDri1,
+        
+        ##Green player 2 info
+        IDgi2 = test[3][0]
+        firstgf2 = test[3][1]
+        lastgl2 = test[3][2]
+        codeNamegc2 = test[3][3]
+        
+        ##Green player 3 info
+        IDgi3 = test[5][0]
+        firstgf3 = test[5][1]
+        lastgl3 = test[5][2]
+        codeNamegc3 = test[5][3]
+        
+        ##Green player 4 info
+        IDgi4 = test[7][0]
+        firstgf4 = test[7][1]
+        lastgl4 = test[7][2]
+        codeNamegc4 = test[7][3]
+        
+        ##Green player 5 info
+        IDgi5 = test[9][0]
+        firstgf5 = test[9][1]
+        lastgl5 = test[9][2]
+        codeNamegc5 = test[9][3]
+        
+        ##Dictionary for all players to be sent to playerAction.html
+        playerDict = {
+            "redplayer1ID" : IDri1,  ##Red player 1 info
             "redplayer1Name" : firstrf1,
             "redplayer1Last" : lastrl1,
             "redplayer1Code" : codeNamerc1,
-            "grennplayer1ID" : IDgi1,
+            "greenplayer1ID" : IDgi1,  ##Green player 1 info
             "greenplayer1Name" : firstgf1,
             "greenplayer1Last" : lastgl1,
-            "greenplayer1Code" : codeNamegc1
+            "greenplayer1Code" : codeNamegc1,
+            "redplayer2ID" : IDri2,  ##Red player 2 info
+            "redplayer2Name" : firstrf2,
+            "redplayer2Last" : lastrl2,
+            "redplayer2Code" : codeNamerc2,
+            "greenplayer2ID" : IDgi2,  ##Green player 2 info
+            "greenplayer2Name" : firstgf2,
+            "greenplayer2Last" : lastgl2,
+            "greenplayer2Code" : codeNamegc2,
+            "redplayer3ID" : IDri3,  ##Red player 3 info
+            "redplayer3Name" : firstrf3,
+            "redplayer3Last" : lastrl3,
+            "redplayer3Code" : codeNamerc3,
+            "greenplayer3ID" : IDgi3,  ##Green player 3 info
+            "greenplayer3Name" : firstgf3,
+            "greenplayer3Last" : lastgl3,
+            "greenplayer3Code" : codeNamegc3,
+            "redplayer4ID" : IDri4,  ##Red player 4 info
+            "redplayer4Name" : firstrf4,
+            "redplayer4Last" : lastrl4,
+            "redplayer4Code" : codeNamerc4,
+            "greenplayer4ID" : IDgi4,  ##Green player 4 info
+            "greenplayer4Name" : firstgf4, 
+            "greenplayer4Last" : lastgl4,
+            "greenplayer4Code" : codeNamegc4,
+            "redplayer5ID" : IDri5,  ##Red player 5 info
+            "redplayer5Name" : firstrf5,
+            "redplayer5Last" : lastrl5,
+            "redplayer5Code" : codeNamerc5,
+            "greenplayer5ID" : IDgi5,  ##Green player 4 info
+            "greenplayer5Name" : firstgf5,
+            "greenplayer5Last" : lastgl5,
+            "greenplayer5Code" : codeNamegc5,
         }
-        print (testdict)
-        return testdict
-
-        
-        
-# retrievePlayer()
+        ##Send player dictionary as json object to javascript
+        return jsonify(playerDict)

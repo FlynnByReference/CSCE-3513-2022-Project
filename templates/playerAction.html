@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" /></head>
 
 
-<body onload="testFunction()">
+<body>
   <div class="col-action">
     <div class="coll1">
       <h1>Red Team</h1>
@@ -73,36 +73,29 @@
     }
   }, 1000);
   
+  //When this loads wait 10 seconds for players to load to database then get the players
+  setTimeout(function testFunction(){
+    //Create request to get players
+    request = new XMLHttpRequest();
+    
+    //Set path to call retrievePath in main.py
+    request.open('GET', '/getplayer', true);
 
-function testFunction(){
-  // Get red team players
-  request = new XMLHttpRequest();
-  request.open('GET', '/getplayer', true);
-  console.log("Here");
-  request.send();
-}
-  
+    //Set the dictionary retrieving to a json object
+    request.responseType = 'json';
+
+    //Send request
+    request.send();
+
+    //When it returns get the player objects
+    request.onload = function(){
+      let testObj = request.response;
+      console.log(testObj.redplayer2ID);
+    }
 
 
+}, 10000);
 
-
-  //         request.open('GET','redData', true);
-  //         request.onload = function() {
-  //             var response = request.response;
-  //             const redData = response.split(",");
-  //             var redName1 = redData;
-  //             document.getElementById("redName1").innerHTML = redData;
-  //         }
-
-  // // Get green team players
-  // var request = new XMLHttpRequest();
-  //         request.open('GET','greenData', true);
-  //         request.onload = function() {
-  //             var response = request.response;
-  //             const greenData = response.split(",");
-  //             var greenName1 = greenData;
-  //             document.getElementById("greenName1").innerHTML = greenData;
-  //        }
   </script>
 
   </html>
