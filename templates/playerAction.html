@@ -28,17 +28,19 @@
   <div class="box">
   <div class="boxRed"><h3>
     <div class = "redData" id="redName1" ></div><br>
-    pedro<br>
-    logan
-    david</h3>
+    <div class = "redData" id="redName2" ></div><br>
+    <div class = "redData" id="redName3" ></div><br>
+    <div class = "redData" id="redName4" ></div><br>
+    <div class = "redData" id="redName5" ></div><br>
     </div>
 
     <!-- Box for green players -->
     <div class="boxGreen"><h3>
-      Rodrigo Mouron<br>
-      pedro<br>
-      logan
-      david</h3>
+      <div class = "greenData" id="greenName1" ></div><br>
+      <div class = "greenData" id="greenName2" ></div><br>
+      <div class = "greenData" id="greenName3" ></div><br>
+      <div class = "greenData" id="greenName4" ></div><br>
+      <div class = "greenData" id="greenName5" ></div><br>
       </div>
       </div>
 
@@ -53,6 +55,7 @@
 
 <script>
 
+  // Get red team players
   var request = new XMLHttpRequest();
           request.open('GET','redData', true);
           request.onload = function() {
@@ -60,6 +63,16 @@
               const redData = response.split(",");
               var redName1 = redData;
               document.getElementById("redName1").innerHTML = redData;
+          }
+
+  // Get green team players
+  var request = new XMLHttpRequest();
+          request.open('GET','greenData', true);
+          request.onload = function() {
+              var response = request.response;
+              const redData = response.split(",");
+              var redName1 = redData;
+              document.getElementById("greenName1").innerHTML = redData;
           }
   </script>
 
