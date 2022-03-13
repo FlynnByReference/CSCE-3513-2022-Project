@@ -12,7 +12,7 @@
   <div class="col-action">
     <div class="coll1">
       <h1>Red Team</h1>
-      <p id="test" ></p>
+      <!-- <p id="test" ></p> -->
       
       <!-- red players go here -->
     </div>
@@ -27,15 +27,25 @@
   <!-- Box for red players -->
   <div class="box">
   <div class="boxRed"><h3>
-    <div class = "redData" id="redName1" ></div><br>
-    <div class = "redData" id="redName2" ></div><br>
-    <div class = "redData" id="redName3" ></div><br>
-    <div class = "redData" id="redName4" ></div><br>
-    <div class = "redData" id="redName5" ></div><br>
+    <div id = 'redplayer1ID'></div>
+    <div id = 'redplayer2ID'></div>
+    <div id = 'redplayer3ID'></div>
+    <div id = 'redplayer4ID'></div>
+    <div id = 'redplayer5ID'></div>
+    <div id="redName1" ></div><br>
+    <div id="redName2" ></div><br>
+    <div id="redName3" ></div><br>
+    <div id="redName4" ></div><br>
+    <div cid="redName5" ></div><br>
     </div>
 
     <!-- Box for green players -->
     <div class="boxGreen"><h3>
+      <div id = 'greenplayer1ID'></div>
+      <div id = 'greenplayer2ID'></div>
+      <div id = 'greenplayer3ID'></div>
+      <div id = 'greenplayer4ID'></div>
+      <div id = 'greenplayer5ID'></div>
       <div class = "greenData" id="greenName1" ></div><br>
       <div class = "greenData" id="greenName2" ></div><br>
       <div class = "greenData" id="greenName3" ></div><br>
@@ -46,6 +56,7 @@
 
       <!-- Third Box -->
       <div class="bigBox">
+        <p id="test" ></p>
       </div>
 <form name="playerForm">
 
@@ -90,7 +101,45 @@
     //When it returns get the player objects
     request.onload = function(){
       let testObj = request.response;
-      console.log(testObj.redplayer2ID);
+      //Red team ID's
+      var redplayer1ID = testObj.redplayer1ID;
+      document.getElementById('redplayer1ID').innerHTML = redplayer1ID;
+
+      var redplayer1ID = testObj.redplayer1ID;
+      document.getElementById('redplayer1ID').innerHTML = redplayer1ID;
+
+      var redplayer2ID = testObj.redplayer2ID;
+      document.getElementById('redplayer2ID').innerHTML = redplayer2ID;
+
+      var redplayer3ID = testObj.redplayer1ID;
+      document.getElementById('redplayer3ID').innerHTML = redplayer3ID;
+
+      var redplayer4ID = testObj.redplayer4ID;
+      document.getElementById('redplayer4ID').innerHTML = redplayer4ID;
+
+      var redplayer5ID = testObj.redplayer5ID;
+      document.getElementById('redplayer5ID').innerHTML = redplayer5ID;
+      //Red team names
+      var redplayer1Name = testObj.redplayer1Name;
+      document.getElementById('redplayer1Name').innerHTML = redplayer1Name;
+
+      //Green team ID's
+      var greenplayer1ID = testObj.greenplayer1ID;
+      document.getElementById('greenplayer1ID').innerHTML = greenplayer1ID;
+
+      var greenplayer2ID = testObj.greenplayer2ID;
+      document.getElementById('greenplayer2ID').innerHTML = greenplayer2ID;
+
+      var greenplayer3ID = testObj.greenplayer3ID;
+      document.getElementById('greenplayer3ID').innerHTML = greenplayer3ID;
+
+      var greenplayer4ID = testObj.greenplayer4ID;
+      document.getElementById('greenplayer4ID').innerHTML = greenplayer4ID;
+
+      var greenplayer5ID = testObj.greenplayer5ID;
+      document.getElementById('greenplayer5ID').innerHTML = greenplayer5ID;
+
+      console.log(testObj.redplayer1ID);
     }
 
 
