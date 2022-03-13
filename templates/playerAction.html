@@ -70,9 +70,9 @@
           request.open('GET','greenData', true);
           request.onload = function() {
               var response = request.response;
-              const redData = response.split(",");
-              var redName1 = redData;
-              document.getElementById("greenName1").innerHTML = redData;
+              const greenData = response.split(",");
+              var greenName1 = greenData;
+              document.getElementById("greenName1").innerHTML = greenData;
           }
   </script>
 
