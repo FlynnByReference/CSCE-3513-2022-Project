@@ -27,7 +27,7 @@
   <!-- Box for red players -->
   <div class="box">
   <div class="boxRed"><h3>
-    Rodrigo Mouron<br>
+    <div class = "redData" id="redName1" ></div><br>
     pedro<br>
     logan
     david</h3>
@@ -49,5 +49,18 @@
 
 </form>
 
-
 </body>
+
+<script>
+
+  var request = new XMLHttpRequest();
+          request.open('GET','redData', true);
+          request.onload = function() {
+              var response = request.response;
+              const redData = response.split(",");
+              var redName1 = redData;
+              document.getElementById("redName1").innerHTML = redData;
+          }
+  </script>
+
+  </html>
