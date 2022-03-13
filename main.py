@@ -139,7 +139,7 @@ def addPlayerThroughMH():
         mh.addPlayer(playerID, first_name, last_name, codename)
         
         
-        print(playerData)
+        # print(playerData)
 
         
     return jsonify(playerData)
@@ -167,4 +167,4 @@ def retrievePlayer():
         print("Player Code Name: " + test[3])
         
         
-retrievePlayer()
+# retrievePlayer()
