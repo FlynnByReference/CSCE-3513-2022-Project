@@ -148,7 +148,7 @@ def addPlayerThroughMH():
         mh.addPlayer(playerID, first_name, last_name, codename)
         
         
-        print(playerData)
+        # print(playerData)
 
         
     return jsonify(playerData)
@@ -167,16 +167,11 @@ def action():
 
 ##Get info from database to Action screen this should probably go in the action about ^^
 def retrievePlayer():
-    ##Loop through db for each player and their information
-    for i in range(1, 11):
-        test = mh.getPlayer(i)
-        print('Player ID: ' + str(test[0]))
-        print("Player First Name: " + test[1])
-        print("Player Last Name: " + test[2])
-        print("Player Code Name: " + test[3])
-    
+    test = mh.getPlayer()
+    print (test)
+    print('here')
     ##Render template variables to player data
-    padTem.render(ID=test[0], first=test[1], last=test[2], codeName=test[3])
+    # padTem.render(ID=test[0], first=test[1], last=test[2], codeName=test[3])
         
         
 retrievePlayer()

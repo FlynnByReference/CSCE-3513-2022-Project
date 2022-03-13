@@ -40,7 +40,7 @@ class connectToHeroku():
         return 1
         
     ##Method for grabbing players info from database
-    def getPlayer(self, x):
+    def getPlayer(self):
         
         ##Try for attempting to connect to database
         try:
@@ -52,9 +52,9 @@ class connectToHeroku():
         ##Grab player from db
         try:
             ##Select this exact one from this x
-            cur2.execute("SELECT * FROM player WHERE Id = %s", (x,))
-            record = cur2.fetchone()
-            #print(record)
+            cur2.execute("SELECT * FROM player")
+            record = cur2.fetchall()
+            # print(record)
         except:
             print("Unable to grab player")
             
