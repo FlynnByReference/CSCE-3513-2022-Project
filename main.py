@@ -53,18 +53,9 @@ def addPlayerThroughMH():
         first_name = playerData["redfirstName1"]
         last_name = playerData["redlastName1"]
         codename = playerData["redcodeName1"]
-        
+                
         ##Call addPlayer method from midhand.py for red player 1
         mh.addPlayer(playerID, first_name, last_name, codename)
-        
-        # ##Variables to pass into database for red player 2
-        # playerID = playerData["redplayerID2"]
-        # first_name = playerData["redfirstName2"]
-        # last_name = playerData["redlastName2"]
-        # codename = playerData["redcodeName2"]
-        
-        # ##Call addPlayer method from midhand.py for red player 2
-        # mh.addPlayer(playerID, first_name, last_name, codename)
         
         ##Variables to pass into database for green player 1        
         playerID = playerData["greenplayerID1"]
@@ -74,6 +65,82 @@ def addPlayerThroughMH():
         
         ##Call addPlayer method from midhand.py for green player 1
         mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for red player 1
+        playerID = playerData["redplayerID2"]
+        first_name = playerData["redfirstName2"]
+        last_name = playerData["redlastName2"]
+        codename = playerData["redcodeName2"]
+        
+        ##Call addPlayer method from midhand.py for red player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for green player 1        
+        playerID = playerData["greenplayerID2"]
+        first_name = playerData["greenplayerfirstname2"]
+        last_name = playerData["greenplayerlastname2"]
+        codename = playerData["greenplayercodename2"]
+        
+        ##Call addPlayer method from midhand.py for green player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for red player 1
+        playerID = playerData["redplayerID3"]
+        first_name = playerData["redfirstName3"]
+        last_name = playerData["redlastName3"]
+        codename = playerData["redcodeName3"]
+        
+        ##Call addPlayer method from midhand.py for red player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for green player 1        
+        playerID = playerData["greenplayerID3"]
+        first_name = playerData["greenplayerfirstname3"]
+        last_name = playerData["greenplayerlastname3"]
+        codename = playerData["greenplayercodename3"]
+        
+        ##Call addPlayer method from midhand.py for green player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for red player 1
+        playerID = playerData["redplayerID4"]
+        first_name = playerData["redfirstName4"]
+        last_name = playerData["redlastName4"]
+        codename = playerData["redcodeName4"]
+        
+        ##Call addPlayer method from midhand.py for red player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for green player 1        
+        playerID = playerData["greenplayerID4"]
+        first_name = playerData["greenplayerfirstname4"]
+        last_name = playerData["greenplayerlastname4"]
+        codename = playerData["greenplayercodename4"]
+        
+        ##Call addPlayer method from midhand.py for green player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for red player 1
+        playerID = playerData["redplayerID5"]
+        first_name = playerData["redfirstName5"]
+        last_name = playerData["redlastName5"]
+        codename = playerData["redcodeName5"]
+        
+        ##Call addPlayer method from midhand.py for red player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        ##Variables to pass into database for green player 1        
+        playerID = playerData["greenplayerID5"]
+        first_name = playerData["greenplayerfirstname5"]
+        last_name = playerData["greenplayerlastname5"]
+        codename = playerData["greenplayercodename5"]
+        
+        ##Call addPlayer method from midhand.py for green player 1
+        mh.addPlayer(playerID, first_name, last_name, codename)
+        
+        
+        print(playerData)
+
         
     return jsonify(playerData)
 
@@ -91,8 +158,13 @@ def action():
 
 ##Get info from database to Action screen this should probably go in the action about ^^
 def retrievePlayer():
-    test = mh.getPlayer(24)
-    print('Player ID: ' + str(test[0]))
-    print("Player First Name: " + test[1])
-    print("Player Last Name: " + test[2])
-    print("Player Code Name: " + test[3])
+    ##Loop through db for each player and their information
+    for i in range(1, 11):
+        test = mh.getPlayer(i)
+        print('Player ID: ' + str(test[0]))
+        print("Player First Name: " + test[1])
+        print("Player Last Name: " + test[2])
+        print("Player Code Name: " + test[3])
+        
+        
+retrievePlayer()

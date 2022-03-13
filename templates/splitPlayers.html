@@ -105,13 +105,13 @@
       <input id="greenf5" name="fName5" type="text" value="">
 
       <label for="greenl5"> Player 5 Last Name:</label>
-      <input id="greenl4" name="lName4" type="text" value="">
+      <input id="greenl5" name="lName5" type="text" value="">
 
       <label for="greenc5"> Player 5 Code Name:</label>
       <input id="greenc5" name="cName5" type="text" value="">
 
   </div>
-  <input type="button" value="Enter" onclick="myPlayers(this.form)"><br>
+  <input type="button" value="Enter" onclick="addPlayers(this.form);"/><br>
   <h4 id='description'></h4>
  
 </div>
@@ -119,39 +119,38 @@
 
 </body>
 <script>
+
 //Function for passing players to main.py
-  function myPlayers(form){
+  function addPlayers(form){
   //Gets user inputs for first red player database
   var redPlayerID1 = 1;
   var redPlayerFirstName1 = form.redf1.value;
   var redPlayerLastName1 = form.redl1.value;
   var redPlayerCodeName1 = form.redc1.value;
 
+  //Gets user inputs for second red player database
   var redPlayerID2 = 2;
   var redPlayerFirstName2 = form.redf2.value;
   var redPlayerLastName2 = form.redl2.value;
   var redPlayerCodeName2 = form.redc2.value;
 
-  var redPlayerID2 = 3;
+  //Gets user inputs for third red player database
+  var redPlayerID3 = 3;
   var redPlayerFirstName3 = form.redf3.value;
   var redPlayerLastName3 = form.redl3.value;
   var redPlayerCodeName3 = form.redc3.value;
 
-  var redPlayerID2 = 4;
+  //Gets user inputs for fourth red player database
+  var redPlayerID4 = 4;
   var redPlayerFirstName4 = form.redf4.value;
   var redPlayerLastName4 = form.redl4.value;
   var redPlayerCodeName4 = form.redc4.value;
 
-  var redPlayerID2 = 5;
+  //Gets user inputs for fifth red player database
+  var redPlayerID5 = 5;
   var redPlayerFirstName5 = form.redf5.value;
   var redPlayerLastName5 = form.redl5.value;
   var redPlayerCodeName5 = form.redc5.value;
-
-
-  // var redPlayer2 = form.red2.value;
-  // var redPlayer3 = form.red3.value;
-  // var redPlayer4 = form.red4.value;
-  // var redPlayer5 = form.red5.value;
 
   //Gets user inputs for first green player database
   var greenPlayerID1 = 6;
@@ -159,58 +158,112 @@
   var greenPlayerLastName1 = form.greenl1.value;
   var greenPlayerCodeName1 = form.greenc1.value;
 
-  var greenPlayerID1 = 7;
+  //Gets user inputs for second green player database
+  var greenPlayerID2 = 7;
   var greenPlayerFirstName2 = form.greenf2.value;
   var greenPlayerLastName2 = form.greenl2.value;
   var greenPlayerCodeName2 = form.greenc2.value;
 
-  var greenPlayerID1 = 8;
+  //Gets user inputs for third green player database
+  var greenPlayerID3 = 8;
   var greenPlayerFirstName3 = form.greenf3.value;
   var greenPlayerLastName3 = form.greenl3.value;
   var greenPlayerCodeName3 = form.greenc3.value;
 
-  var greenPlayerID1 = 9;
+  //Gets user inputs for fourth green player database
+  var greenPlayerID4 = 9;
   var greenPlayerFirstName4 = form.greenf4.value;
   var greenPlayerLastName4 = form.greenl4.value;
   var greenPlayerCodeName4 = form.greenc4.value;
 
-  var greenPlayerID1 = 10;
+  //Gets user inputs for fifth green player database
+  var greenPlayerID5 = 10;
   var greenPlayerFirstName5 = form.greenf5.value;
   var greenPlayerLastName5 = form.greenl5.value;
   var greenPlayerCodeName5 = form.greenc5.value;
   
   //Creates array for first red player
-  var redData = {
+  var redData1 = {
     redplayerID1 : redPlayerID1,
     redfirstName1: redPlayerFirstName1,
     redlastName1: redPlayerLastName1,
     redcodeName1: redPlayerCodeName1
   };
 
-  var redData = {
+  //Creates array for second red player
+  var redData2 = {
     redplayerID2 : redPlayerID2,
     redfirstName2: redPlayerFirstName2,
     redlastName2: redPlayerLastName2,
     redcodeName2: redPlayerCodeName2
   };
 
+  //Creates array for third red player
+  var redData3 = {
+    redplayerID3 : redPlayerID3,
+    redfirstName3: redPlayerFirstName3,
+    redlastName3: redPlayerLastName3,
+    redcodeName3: redPlayerCodeName3
+  };
+
+  //Creates array for fourth red player
+  var redData4 = {
+    redplayerID4 : redPlayerID4,
+    redfirstName4: redPlayerFirstName4,
+    redlastName4: redPlayerLastName4,
+    redcodeName4: redPlayerCodeName4
+  };
+
+  //Creates array for fifth red player
+  var redData5 = {
+    redplayerID5 : redPlayerID5,
+    redfirstName5: redPlayerFirstName5,
+    redlastName5: redPlayerLastName5,
+    redcodeName5: redPlayerCodeName5
+  };
+
   //Creates array for first green player
-  var greenData = {
+  var greenData1 = {
     greenplayerID1 : greenPlayerID1,
     greenplayerfirstname1: greenPlayerFirstName1,
     greenplayerlastname1: greenPlayerLastName1,
     greenplayercodename1: greenPlayerCodeName1
   };
 
-  var greenData = {
+  //Creates array for second green player
+  var greenData2 = {
     greenplayerID2 : greenPlayerID2,
     greenplayerfirstname2: greenPlayerFirstName2,
     greenplayerlastname2: greenPlayerLastName2,
     greenplayercodename2: greenPlayerCodeName2
   };
 
-  //Puts green and red players into together
-  var players = Object.assign({}, redData, greenData);
+  //Creates array for third green player
+  var greenData3 = {
+    greenplayerID3 : greenPlayerID3,
+    greenplayerfirstname3: greenPlayerFirstName3,
+    greenplayerlastname3: greenPlayerLastName3,
+    greenplayercodename3: greenPlayerCodeName3
+  };
+
+  //Creates array for fourth green player
+  var greenData4 = {
+    greenplayerID4 : greenPlayerID4,
+    greenplayerfirstname4: greenPlayerFirstName4,
+    greenplayerlastname4: greenPlayerLastName4,
+    greenplayercodename4: greenPlayerCodeName4
+  };
+
+  //Creates array for fifth green player
+  var greenData5 = {
+    greenplayerID5 : greenPlayerID5,
+    greenplayerfirstname5: greenPlayerFirstName5,
+    greenplayerlastname5: greenPlayerLastName5,
+    greenplayercodename5: greenPlayerCodeName5
+  };
+
+  //Puts green and red players together
+  var players = Object.assign({}, redData1, greenData1, redData2, greenData2, redData3, greenData3, redData4, greenData4, redData5, greenData5);
 
   //Creates for talking between .py
   test = new XMLHttpRequest();
@@ -223,19 +276,24 @@
       var dataSend = JSON.parse(this.responseText);
   };
   //Testing that players are pased through
-  //console.log(players);
+  console.log(players);
 
   //Creates and passes variable to pass through to main.py
   sendData = JSON.stringify(players);
   test.send(sendData);
+
+  //Change html link for action screen
+  window.location.replace('http://127.0.0.1:5000/action');
 }
 
+
+//Was able to put it in the enter button function
 //enter to get to next page
-$(window).on('keypress',function(e){
-  //console.log(e.keyCode)
- if(e.keyCode == 13)
- window.location.replace('http://127.0.0.1:5000/action')
-});
+// $(window).on('keypress',function(e){
+//   //console.log(e.keyCode)
+//  if(e.keyCode == 13)
+//  window.location.replace('http://127.0.0.1:5000/action')
+// });
 
 </script>
 </html>
