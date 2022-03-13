@@ -12,7 +12,16 @@ from flask import render_template
 from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
+from jinja2 import Environment, PackageLoader, select_auto_escape
 
+##Set Jinja environment
+env = Environment(
+    loader=packageLoader('main'),
+    autoescape=select_autoescape()
+)
+
+##Set templates for Jinja
+padTem = env.get_template("playerAction.html")
 
 ##Variable for chosing front end path
 app = Flask(__name__)
@@ -85,3 +94,6 @@ def retrievePlayer():
     print("Player First Name: " + test[1])
     print("Player Last Name: " + test[2])
     print("Player Code Name: " + test[3])
+
+    ##Set player data to Jinja variables
+    padTem.render(ID=test[0], first=test[1], last=test[2], codeName=test[3])
