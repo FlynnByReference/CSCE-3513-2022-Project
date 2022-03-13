@@ -27,17 +27,22 @@
   <!-- Box for red players -->
   <div class="box">
   <div class="boxRed"><h3>
-    <div id = 'redplayer1ID'></div>
+    <div id='wrap'>
+      <div id = 'redplayer1ID' style="float:left;"></div>
+      <div id= 'redplayer1Name' style="float:left;"></div><br>
+    </div>
+      
     <div id = 'redplayer2ID'></div>
     <div id = 'redplayer3ID'></div>
     <div id = 'redplayer4ID'></div>
     <div id = 'redplayer5ID'></div>
-    <div id="redName1" ></div><br>
+    
+  
     <div id="redName2" ></div><br>
     <div id="redName3" ></div><br>
     <div id="redName4" ></div><br>
-    <div cid="redName5" ></div><br>
-    </div>
+    <div cid="redName5" ></div><br> 
+    </div> 
 
     <!-- Box for green players -->
     <div class="boxGreen"><h3>
@@ -111,7 +116,7 @@
       var redplayer2ID = testObj.redplayer2ID;
       document.getElementById('redplayer2ID').innerHTML = redplayer2ID;
 
-      var redplayer3ID = testObj.redplayer1ID;
+      var redplayer3ID = testObj.redplayer3ID;
       document.getElementById('redplayer3ID').innerHTML = redplayer3ID;
 
       var redplayer4ID = testObj.redplayer4ID;
