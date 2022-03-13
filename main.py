@@ -156,14 +156,19 @@ def action():
 
 
 ##Get info from database to Action screen this should probably go in the action about ^^
+@app.route('/getplayer', methods = ['GET'])
 def retrievePlayer():
-    ##Loop through db for each player and their information
-    for i in range(1, 11):
-        test = mh.getPlayer(i)
-        print('Player ID: ' + str(test[0]))
-        print("Player First Name: " + test[1])
-        print("Player Last Name: " + test[2])
-        print("Player Code Name: " + test[3])
+
+    if request.method == 'GET':
+        print("HERE")
+
+        ##Loop through db for each player and their information
+        for i in range(1, 11):
+            test = mh.getPlayer(i)
+            print('Player ID: ' + str(test[0]))
+            print("Player First Name: " + test[1])
+            print("Player Last Name: " + test[2])
+            print("Player Code Name: " + test[3])
         
         
 # retrievePlayer()
