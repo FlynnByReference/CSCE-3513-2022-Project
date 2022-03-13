@@ -12,16 +12,6 @@ from flask import render_template
 from flask import jsonify
 from flask import json
 from midhand import connectToHeroku 
-from jinja2 import Environment, PackageLoader, select_autoescape
-
-##Setup for Jinja
-#Jinja environment
-env = Environment(
-    loader=PackageLoader("main"),
-    autoescape=select_autoescape()
-)
-#Jinja template for the play action display
-padTem = env.get_template("playerAction.html")
 
 ##Variable for chosing front end path
 app = Flask(__name__)
@@ -167,25 +157,35 @@ def action():
 ##Get info from database to Action screen this should probably go in the action about ^^
 @app.route('/getplayer', methods = ['GET'])
 def retrievePlayer():
-<<<<<<< HEAD
-    test = mh.getPlayer()
-    print (test)
-    print('here')
-    ##Render template variables to player data
-    # padTem.render(ID=test[0], first=test[1], last=test[2], codeName=test[3])
-=======
-
+    
     if request.method == 'GET':
-        print("HERE")
+        ##All players from database
+        test = mh.getPlayer()
+        
+        ##Red player 1 info
+        IDri1 = test[0][0]
+        firstrf1 = test[0][1]
+        lastrl1 = test[0][2]
+        codeNamerc1 = test[0][3]
+        
+        ##Green player 1 info
+        IDgi1 = test[1][0]
+        firstgf1 = test[1][1]
+        lastgl1 = test[1][2]
+        codeNamegc1 = test[1][3]
+        testdict = {
+            "redplayer1ID" : IDri1,
+            "redplayer1Name" : firstrf1,
+            "redplayer1Last" : lastrl1,
+            "redplayer1Code" : codeNamerc1,
+            "grennplayer1ID" : IDgi1,
+            "greenplayer1Name" : firstgf1,
+            "greenplayer1Last" : lastgl1,
+            "greenplayer1Code" : codeNamegc1
+        }
+        print (testdict)
+        return testdict
 
-        ##Loop through db for each player and their information
-        for i in range(1, 11):
-            test = mh.getPlayer(i)
-            print('Player ID: ' + str(test[0]))
-            print("Player First Name: " + test[1])
-            print("Player Last Name: " + test[2])
-            print("Player Code Name: " + test[3])
->>>>>>> dea427474a27cfb9167fe1ec44fae1659a995b2e
         
         
 # retrievePlayer()
