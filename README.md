@@ -16,9 +16,11 @@
 Before starting you must delete previous player data from Heroku
 First you need to login to our Heroku account using our credentials
 $ heroku login
-Next you need to enter the psql for our data and delete
+(After this command it will bring you to the page to login)
+Next you need to enter the psql for our data and delete using the two commands below
 $ heroku pg:psql -a laser-tag-spring-2022
 $ delete from player;
+Now you can run the project
 (While in project folder, when you put ls, you see "main.py")
 $ export FLASK_APP=main
 $ flask run
@@ -36,9 +38,11 @@ The timer will show up, then wait about 10 seconds for players to show up
 Before starting you must delete previous player data from Heroku
 First you need to login to our Heroku account using our credentials
 > heroku login
-Next you need to enter the psql for our data and delete
+(After this command it will bring you to the page to login)
+Next you need to enter the psql for our data and delete using the two commands below
 > heroku pg:psql -a laser-tag-spring-2022
 > delete from player;
+Now you can run the project
 (While in project folder, when you put ls, you see "main.py")
 > set FLASK_APP=main
 > python3 -m flask run
@@ -57,13 +61,12 @@ pip3 install Flask
 
 ```
 
-# Sprint 2 Notes:
-1. Git repositories created
-1. Splash Screen created
-1. Player entry screen created
-1. Database linked to Application
-1. 2 Player addition to database through App
-1. Trello tasks assigned
+# Sprint 3 Notes:
+1. Update Trello cards
+1. Create play action screen
+1. Change to play action screen by clicking "Enter" button
+1. Code the countdown timer
+1. Slack reports 
 1. Individual github commits
 
 # Kill Command
