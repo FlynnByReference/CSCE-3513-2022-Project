@@ -12,108 +12,255 @@
   <div class="col-action">
     <div class="coll1">
       <h1>Red Team</h1>
-      
-
-      
-      <!-- red players go here -->
+   
     </div>
+
     <div class="coll2">
       <h1>Green Team</h1>
-      <!-- green players go here -->
+
     </div>
   </div>
-
+  
   <!-- Second box -->
   <!-- Box for red players -->
   <div class="box">
   <div class="boxRed"><h3>
-    Rodrigo Mouron<br>
-    pedro<br>
-    logan
-    david</h3>
+    <div id='redwrap1'>
+      <div id = 'redplayer1ID' style="padding:20px; float:left;"></div>
+      <div id= 'redplayer1Name' style="padding:20px; float:left;"></div>
+      <div id ='redplayer1Last'  style="padding:20px; float:left;"></div>
+      <div id ='redplayer1Code'  style="padding:20px; float:left;"></div><br><br><br>
+      <div id = 'redplayer2ID' style="padding:20px; float:left;"></div>
+      <div id= 'redplayer2Name' style="padding:20px; float:left;"></div>
+      <div id ='redplayer2Last'  style="padding:20px; float:left;"></div>
+      <div id ='redplayer2Code'  style="padding:20px; float:left;"></div><br><br><br>
+      <div id = 'redplayer3ID' style="padding:20px; float:left;"></div>
+      <div id= 'redplayer3Name' style="padding:20px; float:left;"></div>
+      <div id ='redplayer3Last'  style="padding:20px; float:left;"></div>
+      <div id ='redplayer3Code'  style="padding:20px; float:left;"></div><br><br><br>
+      <div id = 'redplayer4ID' style="padding:20px; float:left;"></div>
+      <div id= 'redplayer4Name' style="padding:20px; float:left;"></div>
+      <div id ='redplayer4Last'  style="padding:20px; float:left;"></div>
+      <div id ='redplayer4Code'  style="padding:20px; float:left;"></div><br><br><br>
+      <div id = 'redplayer5ID' style="padding:20px; float:left;"></div>
+      <div id= 'redplayer5Name' style="padding:20px; float:left;"></div>
+      <div id ='redplayer5Last'  style="padding:20px; float:left;"></div>
+      <div id ='redplayer5Code'  style="padding:20px; float:left;"></div><br><br><br>
     </div>
+  </div>
+
 
     <!-- Box for green players -->
     <div class="boxGreen"><h3>
-      Rodrigo Mouron<br>
-      pedro<br>
-      logan
-      david</h3>
+
+      <div id='greenwrap1'>
+        <div id = 'greenplayer1ID' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer1Name' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer1Last' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer1Code' style="padding:20px; float:left;"></div><br><br><br>
+        <div id = 'greenplayer2ID' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer2Name' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer2Last' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer2Code' style="padding:20px; float:left;"></div><br><br><br>
+        <div id = 'greenplayer3ID' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer3Name' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer3Last' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer3Code' style="padding:20px; float:left;"></div><br><br><br>
+        <div id = 'greenplayer4ID' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer4Name' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer4Last' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer4Code' style="padding:20px; float:left;"></div><br><br><br>
+        <div id = 'greenplayer5ID' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer5Name' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer5Last' style="padding:20px; float:left;"></div>
+        <div id= 'greenplayer5Code' style="padding:20px; float:left;"></div><br><br><br>
       </div>
-      </div>
+    </div>
 
       <!-- Third Box -->
       <div class="bigBox">
+        <center><p id="test" style = "color: blue;"></p></center>
       </div>
 <form name="playerForm">
 
 </form>
 
-
 </body>
+
 <script>
-  //Function for passing players to main.py
-    function myPlayers(form){
-    //Gets user inputs for first red player database
-    var redPlayerID1 = 1;
-    var redPlayerFirstName1 = form.redf1.value;
-    var redPlayerLastName1 = form.redl1.value;
-    var redPlayerCodeName1 = form.redc1.value;
+  //Set countdown to 30 seconds
+  var countDownTime = 30;
+
+  //Find where the countdown is supposed to be
+  var count = document.getElementById('test');
+
+  //Function for every 1 second to print the count
+  var time = setInterval(function() {
+    //If time is less then 0 keep at 0
+    if(countDownTime < 0){
+      clearTimeout(time);
+    }
+    //Display time and subtract 1
+    else{
+      count.innerHTML = countDownTime + ' seconds remaining until game starts';
+      countDownTime = countDownTime - 1;
+    }
+  }, 1000);
   
-  
-    // var redPlayer2 = form.red2.value;
-    // var redPlayer3 = form.red3.value;
-    // var redPlayer4 = form.red4.value;
-    // var redPlayer5 = form.red5.value;
-  
-    //Gets user inputs for first green player database
-    var greenPlayerID1 = 6;
-    var greenPlayerFirstName1 = form.greenf1.value;
-    var greenPlayerLastName1 = form.greenl1.value;
-    var greenPlayerCodeName1 = form.greenc1.value;
+  //When this loads wait 10 seconds for players to load to database then get the players
+  setTimeout(function testFunction(){
+    //Create request to get players
+    request = new XMLHttpRequest();
     
-    //Creates array for first red player
-    var redData = {
-      redplayerID1 : redPlayerID1,
-      redfirstName1: redPlayerFirstName1,
-      redlastName1: redPlayerLastName1,
-      redcodeName1: redPlayerCodeName1
-    };
-  
-    //Creates array for first green player
-    var greenData = {
-      playerID : greenPlayerID1,
-      firstName: greenPlayerFirstName1,
-      lastName: greenPlayerLastName1,
-      codeName: greenPlayerCodeName1
-    };
-  
-    //Puts green and red players into together
-    var players = Object.assign({}, redData, greenData);
-  
-    //Creates for talking between .py
-    test = new XMLHttpRequest();
-  
-    //Opens path to add player info to database
-    test.open('POST', '/submit', true);
-  
-    //Sets value for onload
-    test.onload = function(){
-        var dataSend = JSON.parse(this.responseText);
-    };
-    //Testing that players are pased through
-    //console.log(players);
-  
-    //Creates and passes variable to pass through to main.py
-    sendData = JSON.stringify(players);
-    test.send(sendData);
-  }
-  
-  //enter to get to next page
-  $(window).on('keypress',function(e){
-    //console.log(e.keyCode)
-   if(e.keyCode == 13)
-   window.location.replace('http://127.0.0.1:5000/action')
-  });
-  
+    //Set path to call retrievePath in main.py
+    request.open('GET', '/getplayer', true);
+
+    //Set the dictionary retrieving to a json object
+    request.responseType = 'json';
+
+    //Send request
+    request.send();
+
+    //When it returns get the player objects
+    request.onload = function(){
+      let testObj = request.response;
+      //Red team ID's
+      var redplayer1ID = testObj.redplayer1ID;
+      document.getElementById('redplayer1ID').innerHTML = redplayer1ID;
+
+      var redplayer2ID = testObj.redplayer2ID;
+      document.getElementById('redplayer2ID').innerHTML = redplayer2ID;
+
+      var redplayer3ID = testObj.redplayer3ID;
+      document.getElementById('redplayer3ID').innerHTML = redplayer3ID;
+
+      var redplayer4ID = testObj.redplayer4ID;
+      document.getElementById('redplayer4ID').innerHTML = redplayer4ID;
+
+      var redplayer5ID = testObj.redplayer5ID;
+      document.getElementById('redplayer5ID').innerHTML = redplayer5ID;
+
+      //Red team first names
+      var redplayer1Name = testObj.redplayer1Name;
+      document.getElementById('redplayer1Name').innerHTML = redplayer1Name;
+
+      var redplayer2Name = testObj.redplayer2Name;
+      document.getElementById('redplayer2Name').innerHTML = redplayer2Name;
+
+      var redplayer3Name = testObj.redplayer3Name;
+      document.getElementById('redplayer3Name').innerHTML = redplayer3Name;
+
+      var redplayer4Name = testObj.redplayer4Name;
+      document.getElementById('redplayer4Name').innerHTML = redplayer4Name;
+
+      var redplayer5Name = testObj.redplayer5Name;
+      document.getElementById('redplayer5Name').innerHTML = redplayer5Name;
+
+      //Red team last name
+      var redplayer1Last = testObj.redplayer1Last;
+      document.getElementById('redplayer1Last').innerHTML = redplayer1Last;
+
+      var redplayer2Last = testObj.redplayer2Last;
+      document.getElementById('redplayer2Last').innerHTML = redplayer2Last;
+
+      var redplayer3Last = testObj.redplayer3Last;
+      document.getElementById('redplayer3Last').innerHTML = redplayer3Last;
+
+      var redplayer4Last = testObj.redplayer4Last;
+      document.getElementById('redplayer4Last').innerHTML = redplayer4Last;
+
+      var redplayer5Last = testObj.redplayer5Last;
+      document.getElementById('redplayer5Last').innerHTML = redplayer5Last;
+
+      //Red team code names
+      var redplayer1Code = testObj.redplayer1Code;
+      document.getElementById('redplayer1Code').innerHTML = redplayer1Code;
+
+      var redplayer2Code = testObj.redplayer2Code;
+      document.getElementById('redplayer2Code').innerHTML = redplayer2Code;
+
+      var redplayer3Code = testObj.redplayer3Code;
+      document.getElementById('redplayer3Code').innerHTML = redplayer3Code;
+
+      var redplayer4Code = testObj.redplayer4Code;
+      document.getElementById('redplayer4Code').innerHTML = redplayer4Code;
+
+      var redplayer5Code = testObj.redplayer5Code;
+      document.getElementById('redplayer5Code').innerHTML = redplayer5Code;
+
+      //Green team ID's
+      var greenplayer1ID = testObj.greenplayer1ID;
+      document.getElementById('greenplayer1ID').innerHTML = greenplayer1ID;
+
+      var greenplayer2ID = testObj.greenplayer2ID;
+      document.getElementById('greenplayer2ID').innerHTML = greenplayer2ID;
+
+      var greenplayer3ID = testObj.greenplayer3ID;
+      document.getElementById('greenplayer3ID').innerHTML = greenplayer3ID;
+
+      var greenplayer4ID = testObj.greenplayer4ID;
+      document.getElementById('greenplayer4ID').innerHTML = greenplayer4ID;
+
+      var greenplayer5ID = testObj.greenplayer5ID;
+      document.getElementById('greenplayer5ID').innerHTML = greenplayer5ID;
+
+      //Green team first names
+      var greenplayer1Name = testObj.greenplayer1Name;
+      document.getElementById('greenplayer1Name').innerHTML = greenplayer1Name;
+
+      var greenplayer2Name = testObj.greenplayer2Name;
+      document.getElementById('greenplayer2Name').innerHTML = greenplayer2Name;
+
+      var greenplayer3Name = testObj.greenplayer3Name;
+      document.getElementById('greenplayer3Name').innerHTML = greenplayer3Name;
+
+      var greenplayer4Name = testObj.greenplayer4Name;
+      document.getElementById('greenplayer4Name').innerHTML = greenplayer4Name;
+
+      var greenplayer5Name = testObj.greenplayer5Name;
+      document.getElementById('greenplayer5Name').innerHTML = greenplayer5Name;
+
+      //Green team last names
+      var greenplayer1Last = testObj.greenplayer1Last;
+      document.getElementById('greenplayer1Last').innerHTML = greenplayer1Last;
+
+      var greenplayer2Last = testObj.greenplayer2Last;
+      document.getElementById('greenplayer2Last').innerHTML = greenplayer2Last;
+
+      var greenplayer3Last = testObj.greenplayer3Last;
+      document.getElementById('greenplayer3Last').innerHTML = greenplayer3Last;
+
+      var greenplayer4Last = testObj.greenplayer4Last;
+      document.getElementById('greenplayer4Last').innerHTML = greenplayer4Last;
+
+      var greenplayer5Last = testObj.greenplayer5Last;
+      document.getElementById('greenplayer5Last').innerHTML = greenplayer5Last;
+
+      //Green team code names
+      var greenplayer1Code = testObj.greenplayer1Code;
+      document.getElementById('greenplayer1Code').innerHTML = greenplayer1Code;
+
+      var greenplayer2Code = testObj.greenplayer2Code;
+      document.getElementById('greenplayer2Code').innerHTML = greenplayer2Code;
+
+      var greenplayer3Code = testObj.greenplayer3Code;
+      document.getElementById('greenplayer3Code').innerHTML = greenplayer3Code;
+
+      var greenplayer4Code = testObj.greenplayer4Code;
+      document.getElementById('greenplayer4Code').innerHTML = greenplayer4Code;
+
+      var greenplayer5Code = testObj.greenplayer5Code;
+      document.getElementById('greenplayer5Code').innerHTML = greenplayer5Code;
+
+      // console.log(testObj.redplayer1ID);
+    }
+
+
+}, 10000);
+
+// var space = " ";
+// document.getElementById('space').innerHTML = space;
+
   </script>
+
+  </html>
