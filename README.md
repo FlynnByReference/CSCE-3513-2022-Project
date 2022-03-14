@@ -13,6 +13,12 @@
 
 # To run the project (Mac), run the following commands:
 ```python
+Before starting you must delete previous player data from Heroku
+First you need to login to our Heroku account using our credentials
+$ heroku login
+Next you need to enter the psql for our data and delete
+$ heroku pg:psql -a laser-tag-spring-2022
+$ delete from player;
 (While in project folder, when you put ls, you see "main.py")
 $ export FLASK_APP=main
 $ flask run
@@ -20,12 +26,19 @@ $ flask run
 Follow the link (cmd + click)
 When splash screen loads click on screen to go to player entry screen
 Enter players information
-Click "Enter" to send players to database
- 
+Click "Enter" to send players to database and goes to playerAction.html
+The timer will show up, then wait about 10 seconds for players to show up
+
 ```
 
 # To run the project (Windows), run the following commands:
 ```python
+Before starting you must delete previous player data from Heroku
+First you need to login to our Heroku account using our credentials
+> heroku login
+Next you need to enter the psql for our data and delete
+> heroku pg:psql -a laser-tag-spring-2022
+> delete from player;
 (While in project folder, when you put ls, you see "main.py")
 > set FLASK_APP=main
 > python3 -m flask run
@@ -33,7 +46,8 @@ Click "Enter" to send players to database
 Follow the link (ctrl + click)
 When splash screen loads click on screen to go to player entry screen
 Enter players information
-Click "Enter" to send players to database
+Click "Enter" to send players to database and goes to playerAction.html
+The timer will show up, then wait about 10 seconds for players to show up
  
 ```
 
