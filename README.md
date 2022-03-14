@@ -61,6 +61,29 @@ pip3 install Flask
 
 ```
 
+# To install PSQL on Mac using Brew (Terminal commands)
+```python
+$brew install postgresql
+
+```
+
+# To install PSQL on Windows (Instructions from Sprint 2)
+```python
+•	PostgreSQL client [https://www.enterprisedb.com/downloads/postgres-postgresql-downloads]
+◦	Download and run the setup wizard for you system architecture
+◦	During component installation only select pgAdmin, which is a graphical UI client
+▪	Technically you don’t need pgAdmin, but it installs psql which you will need
+▪	The Heroku CLI will use the PostgreSQL client, psql, to communicate with the PostgreSQL
+◦	You don’t need the PostgreSQL database server as that will be hosted on Heroku’s servers
+▪	Though if you want to run your database locally this is the way to install it
+◦	You can verify access via the Command Prompt using the following command
+▪	psql -V
+▪	If that doesn’t work then you will need to update your system’s PATH variable and then restart your Command Prompt
+•	Add an entry similar to [C:\Program Files\PostgreSQL12\bin\]
+
+
+```
+
 # Sprint 3 Notes:
 1. Update Trello cards
 1. Create play action screen
