@@ -13,14 +13,6 @@
 
 # To run the project (Mac), run the following commands:
 ```python
-Before starting you must delete previous player data from Heroku
-First you need to login to our Heroku account using our credentials
-$ heroku login
-(After this command it will bring you to the page to login)
-Next you need to enter the psql for our data and delete using the two commands below
-$ heroku pg:psql -a laser-tag-spring-2022
-$ delete from player;
-Now you can run the project
 (While in project folder, when you put ls, you see "main.py")
 $ export FLASK_APP=main
 $ flask run
@@ -28,21 +20,12 @@ $ flask run
 Follow the link (cmd + click)
 When splash screen loads click on screen to go to player entry screen
 Enter players information
-Click "Enter" to send players to database and goes to playerAction.html
-The timer will show up, then wait about 10 seconds for players to show up
-
+Click "Enter" to send players to database
+ 
 ```
 
 # To run the project (Windows), run the following commands:
 ```python
-Before starting you must delete previous player data from Heroku
-First you need to login to our Heroku account using our credentials
-> heroku login
-(After this command it will bring you to the page to login)
-Next you need to enter the psql for our data and delete using the two commands below
-> heroku pg:psql -a laser-tag-spring-2022
-> delete from player;
-Now you can run the project
 (While in project folder, when you put ls, you see "main.py")
 > set FLASK_APP=main
 > python3 -m flask run
@@ -50,8 +33,7 @@ Now you can run the project
 Follow the link (ctrl + click)
 When splash screen loads click on screen to go to player entry screen
 Enter players information
-Click "Enter" to send players to database and goes to playerAction.html
-The timer will show up, then wait about 10 seconds for players to show up
+Click "Enter" to send players to database
  
 ```
 
@@ -61,31 +43,13 @@ pip3 install Flask
 
 ```
 
-# To install PSQL on Mac using Brew (Terminal commands)
-```python
-$brew install postgresql
-
-```
-
-# To install PSQL on Windows (Instructions given in Sprint 2 Document)
-```python
-PostgreSQL client [https://www.enterprisedb.com/downloads/postgres-postgresql-downloads]
-Download and run the setup wizard for you system architecture
-During component installation only select pgAdmin
-You can verify access via the Command Prompt using the following command
-psql -V
-If that doesn’t work then you will need to update your system’s PATH variable and then restart your Command Prompt
-Add an entry similar to [C:\Program Files\PostgreSQL12\bin\]
-
-
-```
-
-# Sprint 3 Notes:
-1. Update Trello cards
-1. Create play action screen
-1. Change to play action screen by clicking "Enter" button
-1. Code the countdown timer
-1. Slack reports 
+# Sprint 2 Notes:
+1. Git repositories created
+1. Splash Screen created
+1. Player entry screen created
+1. Database linked to Application
+1. 2 Player addition to database through App
+1. Trello tasks assigned
 1. Individual github commits
 
 # Kill Command
