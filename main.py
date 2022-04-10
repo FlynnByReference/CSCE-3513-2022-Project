@@ -6,6 +6,7 @@
 #
 # Start of Code
 
+import socket
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -20,6 +21,13 @@ app = Flask(__name__)
 mh = connectToHeroku()
 
 # mh.addPlayer(4, 'Testing', 'Main.py', 'test')
+
+serverAddressPort   = ("127.0.0.1", 20001)
+bufferSize          = 1024
+
+# Create a UDP socket at client side
+UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+
 
 ##Sets first path to splash screen
 @app.route("/")
@@ -259,5 +267,59 @@ def retrievePlayer():
             "greenplayer5Last" : lastgl5,
             "greenplayer5Code" : codeNamegc5,
         }
+        
+        msgFromClient = str(playerDict)
+        print(msgFromClient)
+        bytesToSend = str.encode(msgFromClient)
+        UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+        
+        msgFromServer = UDPClientSocket.recvfrom(bufferSize)
+        msg = "Message from Server {}".format(msgFromServer[0])
+        print(msg)
+        
+        totalDict = {
+            "redplayer1ID" : IDri1,  ##Red player 1 info
+            "redplayer1Name" : firstrf1,
+            "redplayer1Last" : lastrl1,
+            "redplayer1Code" : codeNamerc1,
+            "greenplayer1ID" : IDgi1,  ##Green player 1 info
+            "greenplayer1Name" : firstgf1,
+            "greenplayer1Last" : lastgl1,
+            "greenplayer1Code" : codeNamegc1,
+            "redplayer2ID" : IDri2,  ##Red player 2 info
+            "redplayer2Name" : firstrf2,
+            "redplayer2Last" : lastrl2,
+            "redplayer2Code" : codeNamerc2,
+            "greenplayer2ID" : IDgi2,  ##Green player 2 info
+            "greenplayer2Name" : firstgf2,
+            "greenplayer2Last" : lastgl2,
+            "greenplayer2Code" : codeNamegc2,
+            "redplayer3ID" : IDri3,  ##Red player 3 info
+            "redplayer3Name" : firstrf3,
+            "redplayer3Last" : lastrl3,
+            "redplayer3Code" : codeNamerc3,
+            "greenplayer3ID" : IDgi3,  ##Green player 3 info
+            "greenplayer3Name" : firstgf3,
+            "greenplayer3Last" : lastgl3,
+            "greenplayer3Code" : codeNamegc3,
+            "redplayer4ID" : IDri4,  ##Red player 4 info
+            "redplayer4Name" : firstrf4,
+            "redplayer4Last" : lastrl4,
+            "redplayer4Code" : codeNamerc4,
+            "greenplayer4ID" : IDgi4,  ##Green player 4 info
+            "greenplayer4Name" : firstgf4, 
+            "greenplayer4Last" : lastgl4,
+            "greenplayer4Code" : codeNamegc4,
+            "redplayer5ID" : IDri5,  ##Red player 5 info
+            "redplayer5Name" : firstrf5,
+            "redplayer5Last" : lastrl5,
+            "redplayer5Code" : codeNamerc5,
+            "greenplayer5ID" : IDgi5,  ##Green player 4 info
+            "greenplayer5Name" : firstgf5,
+            "greenplayer5Last" : lastgl5,
+            "greenplayer5Code" : codeNamegc5,
+            "events" : msg,
+        }
+        
         ##Send player dictionary as json object to javascript
-        return jsonify(playerDict)
+        return jsonify(totalDict)

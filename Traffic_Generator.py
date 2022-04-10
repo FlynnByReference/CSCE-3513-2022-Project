@@ -37,7 +37,7 @@ green2 = str(green2)
 counter = random.randint(1,10)
 
 # Create datagram socket
-UDPClientSocketTransmit = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # counter number of events, random player and order
 i = 0
@@ -53,13 +53,13 @@ while i < int(counter):
 		greenplayer = green2	
 
 	if random.randint(1,2) == 1:
-		message = redplayer + ":" + greenplayer
+		message = "Red player " + redplayer + " shot Green player " + greenplayer
 	else:
-		message = greenplayer + ":" + redplayer
+		message = "Green player " + greenplayer + " shot Red player " + redplayer
 
 	print(message)
 	i+=1;
-	UDPClientSocketTransmit.sendto(str.encode(str(message)), serverAddressPort)
+	UDPServerSocket.sendto(str.encode(str(message)), serverAddressPort)
 	time.sleep(random.randint(1,3))
 	
 print("program complete")
