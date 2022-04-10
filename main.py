@@ -274,8 +274,16 @@ def retrievePlayer():
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
         
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
-        msg = "Message from Server {}".format(msgFromServer[0])
+        msg = "{}".format(msgFromServer[0])
         print(msg)
+        
+        msgFromServer = UDPClientSocket.recvfrom(bufferSize)
+        redPoints = "{}".format(msgFromServer[0])
+        print(redPoints)
+        
+        msgFromServer = UDPClientSocket.recvfrom(bufferSize)
+        greenPoints = "{}".format(msgFromServer[0])
+        print(greenPoints)
         
         totalDict = {
             "redplayer1ID" : IDri1,  ##Red player 1 info
@@ -319,6 +327,8 @@ def retrievePlayer():
             "greenplayer5Last" : lastgl5,
             "greenplayer5Code" : codeNamegc5,
             "events" : msg,
+            "redpoints" : redPoints,
+            "greenpoints" : greenPoints,
         }
         
         ##Send player dictionary as json object to javascript

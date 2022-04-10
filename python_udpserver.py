@@ -55,6 +55,8 @@ UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 # counter number of events, random player and order
 i = 0
 totalMessage = ""
+redPoints = 0
+greenPoints = 0
 
 while i < int(counter):
 	if random.randint(1,2) == 1:
@@ -69,8 +71,10 @@ while i < int(counter):
 
 	if random.randint(1,2) == 1:
 		message = "Red player " + redplayer + " shot Green player " + greenplayer
+		redPoints += 1
 	else:
 		message = "Green player " + greenplayer + " shot Red player " + redplayer
+		greenPoints += 1
 	print(message)
 	if i == 0:
 	    totalMessage += message
@@ -80,7 +84,8 @@ while i < int(counter):
 	i += 1
 
 
-print(totalMessage)	
 UDPServerSocket.sendto(str.encode(str(totalMessage)), address)
+UDPServerSocket.sendto(str.encode(str(redPoints)), address)
+UDPServerSocket.sendto(str.encode(str(greenPoints)), address)
 time.sleep(random.randint(1,3))
 print("program complete")
