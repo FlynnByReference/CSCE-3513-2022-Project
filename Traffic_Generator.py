@@ -11,19 +11,36 @@ print('this program will generate some test traffic for 2 players on the red ')
 print('team as well as 2 players on the green team')
 print('')
 
-red1 = input('Enter id of red player 1 ==> ')
-red2 = input('Enter id of red player 2 ==> ')
-green1 = input('Enter id of green player 1 ==> ')
-green2 = input('Enter id of green player 2 ==> ')
+##Generate random red ID's for simulation
+red1 = random.randint(1,5)
+red2 = random.randint(1,5)
+if (red1 == red2):
+    while(red1 == red2):
+        red2 = random.randint(1,5)
+        
+##Convert random ID's to strings
+red1 = str(red1)
+red2 = str(red2)
+        
+##Generate random green ID's for simulation
+green1 = random.randint(6, 10)
+green2 = random.randint(6, 10)
+if (green1 == green2):
+    while(green1 == green2):
+        green2 = random.randint(6, 10)
 
-print('')
-counter = input('How many events do you want ==> ')
+##Convert random ID's to strings       
+green1 = str(green1)
+green2 = str(green2)
+
+##Generate random number between 1 and 10 for number of events
+counter = random.randint(1,10)
 
 # Create datagram socket
 UDPClientSocketTransmit = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # counter number of events, random player and order
-i = 1
+i = 0
 while i < int(counter):
 	if random.randint(1,2) == 1:
 		redplayer = red1
