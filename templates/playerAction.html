@@ -334,10 +334,12 @@
 
       //Gets the events that happened
       var eventsList = testObj.events;
+      let tempLenght = eventsList.length;
+      eventsList = eventsList.slice(2);
+      eventsList = eventsList.substr(0, tempLenght - 1);
       const events = eventsList.split(",");
       let eventsLength = events.length;
       console.log(events);
-      console.log(eventsLength);
 
       //Gets the red team points
       redPoints = testObj.redpoints;
