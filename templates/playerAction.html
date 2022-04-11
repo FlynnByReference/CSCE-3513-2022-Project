@@ -182,7 +182,7 @@
 
   //Function for every 1 second to print the count
   var time = setInterval(function() {
-    //Print countdown timer if time is positive
+    //Print countdown timer if time is positive //all members helped with this part
     if (countDownTime >= 0){
       count.innerHTML = countDownTime + ' seconds remaining until game starts';
       countDownTime = countDownTime - 1;
@@ -359,7 +359,7 @@
       var greenplayer5Code = testObj.greenplayer5Code;
       document.getElementById('greenplayer5Code').innerHTML = greenplayer5Code;
 
-      //Gets the events that happened
+      //Gets the events that happened //We all worked on this
       var eventsList = testObj.events;
       tempLenght = eventsList.length; //here
       eventsList = eventsList.slice(2);
@@ -379,16 +379,8 @@
       let greenLenght = greenPoints.length;
       greenPoints = greenPoints.substr(0, greenLenght - 1);
       greenPoints = greenPoints.slice(2);
-
-
-      // console.log(redPoints);
-      // console.log(greenPoints);
     }
-
-
 }, 10000);
-
-
   </script>
 
   </html>
