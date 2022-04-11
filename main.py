@@ -18,19 +18,20 @@ from midhand import connectToHeroku
 ##Variable for chosing front end path
 app = Flask(__name__)
 
-
+##Run and compile UDP python file
+subprocess.Popen(['python3', 'python_udpserver.py'])
 
 ##Declares  class from midhand.py
 mh = connectToHeroku()
 
 # mh.addPlayer(4, 'Testing', 'Main.py', 'test')
 
+##Set the address and size for UDP comunication
 serverAddressPort   = ("127.0.0.1", 20001)
 bufferSize          = 1024
 
 # Create a UDP socket at client side
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-
 
 ##Sets first path to splash screen
 @app.route("/")
@@ -147,18 +148,13 @@ def addPlayerThroughMH():
         
         ##Call addPlayer method from midhand.py for green player 1
         mh.addPlayer(playerID, first_name, last_name, codename)
-        
-        
-        # print(playerData)
-
-        
+     
     return jsonify(playerData)
 
 
 ##When path is /action change to the game screen
 @app.route("/action")
 def action():
-    subprocess.Popen(['python3', 'python_udpserver.py'])
     return render_template('playerAction.html')
 
 ##Get info from database to Action screen this should probably go in the action about ^^
@@ -274,26 +270,24 @@ def retrievePlayer():
             "greenplayer5Code" : codeNamegc5,
         }
         
+        ##Send player dict to UDP server
         msgFromClient = str(playerDict)
         bytesToSend = str.encode(msgFromClient)
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
         
-        
-        
+        ##Get events from UDP server
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
         msg = "{}".format(msgFromServer[0])
-        print(msg)
         
+        ##Get red team score from UDP server
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
         redPoints = "{}".format(msgFromServer[0])
-        print(redPoints)
         
+        ##Get green team score from UDP server
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
         greenPoints = "{}".format(msgFromServer[0])
-        print(greenPoints)
         
-        
-        
+        ##Create dict with players, events and scores
         totalDict = {
             "redplayer1ID" : IDri1,  ##Red player 1 info
             "redplayer1Name" : firstrf1,
@@ -340,5 +334,5 @@ def retrievePlayer():
             "greenpoints" : greenPoints,
         }
         
-        ##Send player dictionary as json object to javascript
+        ##Send total dictionary as json object to javascript
         return jsonify(totalDict)

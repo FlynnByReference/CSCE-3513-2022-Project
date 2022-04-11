@@ -69,13 +69,16 @@ while i < int(counter):
 	else: 
 		greenplayer = green2	
 
+	##Red team gets a hit and point
 	if random.randint(1,2) == 1:
 		message = "Red player " + redplayer + " shot Green player " + greenplayer
 		redPoints += 1
+	##Green team gets a hit and point
 	else:
 		message = "Green player " + greenplayer + " shot Red player " + redplayer
 		greenPoints += 1
-	print(message)
+	
+	##Concatinate events
 	if i == 0:
 	    totalMessage += message
 	else:

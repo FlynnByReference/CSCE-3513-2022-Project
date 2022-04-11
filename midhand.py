@@ -62,8 +62,3 @@ class connectToHeroku():
         
         return record
     
-    
-    
-# test = connectToHeroku()
-# test.addPlayer(24, "Nick", "BROWN", "NFB")
-# test.getPlayer()
