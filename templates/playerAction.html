@@ -173,51 +173,39 @@
   //Set countdown to 30 seconds
   var countDownTime = 15;
   var numEvents = -1;
-  var i = 1;
+  var i = 0;
 
   //Find where the countdown is supposed to be
   var count = document.getElementById('test');
 
   //Function for every 1 second to print the count
   var time = setInterval(function() {
-    //If time is less then 0 keep at 0
-    
-    // if(countDownTime < -1){
-    //   //function to display the current action
-    //   count.innerHTML = redPoints + " " + greenPoints;
- 
-  
-    
-    // }
 
     if (countDownTime >= 0){
       count.innerHTML = countDownTime + ' seconds remaining until game starts';
       countDownTime = countDownTime - 1;
     }
     else if(countDownTime == -1){
-
-      //clearTimeout(time);
       count.innerHTML = "Game Start!";
       countDownTime = countDownTime - 1;
-      numEvents = eventsLength * 5;
+      numEvents = (eventsLength) * 5;
       console.log(numEvents);
     }
     else if (numEvents > 0){
-      count.innerHTML = events[i];
+      if (i < eventsLength){
+        count.innerHTML = events[i];
+      }
+      numEvents -= 1;
       testVar = numEvents % 5;
       if(testVar == 0){
          i += 1;
       }
-      numEvents -= 1;
+      
     }
     else{
       countPoints = "Red points: " + redPoints + " vs  " + "Green points: " + greenPoints;
       count.innerHTML = countPoints;
       countDownTime = countDownTime - 1;
-    // while (true){
-    //   countPoints = "Red points: " + redPoints + " vs " + "Green points: " + greenPoints;
-      //var showPoints = window.setInterval(countPoints, 5)
-      //count.innerHTML = showPoints;
     }
    
   }, 1000);

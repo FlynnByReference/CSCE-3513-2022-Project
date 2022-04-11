@@ -7,6 +7,7 @@
 # Start of Code
 
 import socket
+import subprocess
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -16,6 +17,8 @@ from midhand import connectToHeroku
 
 ##Variable for chosing front end path
 app = Flask(__name__)
+
+
 
 ##Declares  class from midhand.py
 mh = connectToHeroku()
@@ -42,6 +45,7 @@ def game():
 ##When player enters info entry set path to get players in
 @app.route('/submit', methods = ['POST'])
 def addPlayerThroughMH():
+    
     ##Array for players info
     playerInfo = []
     
@@ -154,11 +158,13 @@ def addPlayerThroughMH():
 ##When path is /action change to the game screen
 @app.route("/action")
 def action():
+    subprocess.Popen(['python3', 'python_udpserver.py'])
     return render_template('playerAction.html')
 
 ##Get info from database to Action screen this should probably go in the action about ^^
 @app.route('/getplayer', methods = ['GET'])
 def retrievePlayer():
+    
     ##Detect 'GET' method
     if request.method == 'GET':
         ##All players from database
@@ -269,9 +275,10 @@ def retrievePlayer():
         }
         
         msgFromClient = str(playerDict)
-        print(msgFromClient)
         bytesToSend = str.encode(msgFromClient)
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+        
+        
         
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
         msg = "{}".format(msgFromServer[0])
@@ -284,6 +291,8 @@ def retrievePlayer():
         msgFromServer = UDPClientSocket.recvfrom(bufferSize)
         greenPoints = "{}".format(msgFromServer[0])
         print(greenPoints)
+        
+        
         
         totalDict = {
             "redplayer1ID" : IDri1,  ##Red player 1 info
