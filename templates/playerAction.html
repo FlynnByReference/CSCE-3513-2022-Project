@@ -332,9 +332,28 @@
       var greenplayer5Code = testObj.greenplayer5Code;
       document.getElementById('greenplayer5Code').innerHTML = greenplayer5Code;
 
-      console.log(testObj.events);
-      console.log(testObj.redpoints);
-      console.log(testObj.greenpoints);
+      //Gets the events that happened
+      var eventsList = testObj.events;
+      const events = eventsList.split(",");
+      let eventsLength = events.length;
+      console.log(events);
+      console.log(eventsLength);
+
+      //Gets the red team points
+      redPoints = testObj.redpoints;
+      let redLength = redPoints.length;
+      redPoints = redPoints.substr(0, redLength - 1);
+      redPoints = redPoints.slice(2);
+
+      //Gets the green team points
+      greenPoints = testObj.greenpoints;
+      let greenLenght = greenPoints.length;
+      greenPoints = greenPoints.substr(0, greenLenght - 1);
+      greenPoints = greenPoints.slice(2);
+
+
+      console.log(redPoints);
+      console.log(greenPoints);
     }
 
 
