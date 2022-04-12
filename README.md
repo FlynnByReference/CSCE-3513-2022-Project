@@ -30,6 +30,9 @@ When splash screen loads click on screen to go to player entry screen
 Enter players information
 Click "Enter" to send players to database and goes to playerAction.html
 The timer will show up, then wait about 10 seconds for players to show up
+Then the events will replace the timer
+The events of the game will show up for 5 seconds each after the timer ends
+Then the final score will display replacing the events
 
 ```
 
@@ -52,6 +55,9 @@ When splash screen loads click on screen to go to player entry screen
 Enter players information
 Click "Enter" to send players to database and goes to playerAction.html
 The timer will show up, then wait about 10 seconds for players to show up
+Then the events will replace the timer
+The events of the game will show up for 5 seconds each after the timer ends
+Then the final score will display replacing the events
  
 ```
 
