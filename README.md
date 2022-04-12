@@ -80,11 +80,10 @@ Add an entry similar to [C:\Program Files\PostgreSQL12\bin\]
 
 ```
 
-# Sprint 3 Notes:
+# Sprint 4 Notes:
 1. Update Trello cards
-1. Create play action screen
-1. Change to play action screen by clicking "Enter" button
-1. Code the countdown timer
+1. Implement UDP Server and Client
+1. Implement traffic generator
 1. Slack reports 
 1. Individual github commits
 
