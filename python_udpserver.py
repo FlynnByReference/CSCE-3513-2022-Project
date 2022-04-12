@@ -2,6 +2,7 @@ import socket
 import random
 import time
 
+# Sets variables to holdsocket info
 localIP     = "127.0.0.1"
 localPort   = 20001
 bufferSize  = 1024
